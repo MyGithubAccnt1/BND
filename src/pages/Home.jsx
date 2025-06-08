@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import Slider from "react-infinite-logo-slider";
 
 export default function Home() {
+  const baseName = import.meta.env.MODE === "development" ? "/" : "/BND/";
   const background = [
     {
-      src: "/hero1.jpg",
+      src: `${baseName}hero1.jpg`,
       alt: "IMMUMAX",
       className: "w-full h-[calc(100dvh-120px)] object-cover",
     },
     {
-      src: "/hero2.jpg",
+      src: `${baseName}hero2.jpg`,
       alt: "BND",
       className: "w-full h-[calc(100dvh-120px)] object-cover",
     },
@@ -28,11 +29,11 @@ export default function Home() {
   }, []);
 
   const groupOfCompanies = [
-    { src: "/icon.png", alt: "BND Logo" },
-    { src: "/home2.png", alt: "PhilRX Logo" },
-    { src: "/home3.png", alt: "FSPC Logo" },
-    { src: "/home4.png", alt: "P&D Medivet Logo" },
-    { src: "/home5.png", alt: "Pet Prime Logo" },
+    { src: `${baseName}icon.png`, alt: "BND Logo" },
+    { src: `${baseName}home2.png`, alt: "PhilRX Logo" },
+    { src: `${baseName}home3.png`, alt: "FSPC Logo" },
+    { src: `${baseName}home4.png`, alt: "P&D Medivet Logo" },
+    { src: `${baseName}home5.png`, alt: "Pet Prime Logo" },
   ];
 
   return (
@@ -45,7 +46,7 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 md:flex-row md:gap-0">
         <img
-          src="/home1.jpg"
+          src={`${baseName}home1.jpg`}
           alt="home1.jpg"
           className="object-cover object-top"
         />
@@ -242,7 +243,7 @@ export default function Home() {
           Top Pharmaceutical Importers in the Philippines
         </h1>
         <img
-          src="/home6.jpg"
+          src={`${baseName}home6.jpg`}
           alt="BND Ranking"
           className="object-contain w-full md:w-[50%]"
         />
@@ -275,21 +276,21 @@ export default function Home() {
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
           <img
-            src="/home7.jpg"
+            src={`${baseName}home7.jpg`}
             alt="DELCON FORTE"
             className="object-contain max-h-[950px]"
           />
         </div>
         <div>
           <img
-            src="/home8.jpg"
+            src={`${baseName}home8.jpg`}
             alt="EPOTINE"
             className="object-contain max-h-[950px]"
           />
         </div>
         <div>
           <img
-            src="/home9.jpg"
+            src={`${baseName}home9.jpg`}
             alt="GLOSARTAn"
             className="object-contain max-h-[950px]"
           />
@@ -321,13 +322,25 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
-          <img src="/home10.png" alt="" className="object-contain" />
+          <img
+            src={`${baseName}home10.png`}
+            alt=""
+            className="object-contain"
+          />
         </div>
         <div>
-          <img src="/home11.png" alt="" className="object-contain" />
+          <img
+            src={`${baseName}home11.png`}
+            alt=""
+            className="object-contain"
+          />
         </div>
         <div>
-          <img src="/home12.png" alt="" className="object-contain" />
+          <img
+            src={`${baseName}home12.png`}
+            alt=""
+            className="object-contain"
+          />
         </div>
       </div>
 
