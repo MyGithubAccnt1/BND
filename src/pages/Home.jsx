@@ -81,7 +81,7 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto!">
         <h1
-          className="text-[#6EC1E4] font-bold text-center text-3xl"
+          className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           BND Group of Companies
@@ -107,12 +107,12 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! flex flex-col gap-5 mx-5!">
         <h1
-          className="text-[#6EC1E4] font-bold text-center text-3xl"
+          className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Overview of AMB's Success
         </h1>
-        <div className="flex flex-col md:flex-row px-5! gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
@@ -162,7 +162,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="px-5! relative flex justify-center items-center">
+        <div className="relative flex justify-center items-center">
           <span className='content-[""] bg-[#7A7A7A] h-[1px] w-full'></span>
           <span className='absolute content-[""] bg-white w-[40px] flex justify-center items-center'>
             <span className='content-[""] bg-black rounded-full w-[20px] h-[20px] flex justify-center items-center'>
@@ -171,7 +171,7 @@ export default function Home() {
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row px-5! gap-3">
+        <div className="flex flex-col md:flex-row gap-3">
           <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
@@ -234,9 +234,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col items-center gap-5 md:flex-row md:gap-0">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col items-center gap-5 md:flex-row md:gap-0 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold mx-5! text-3xl md:text-5xl"
+          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Top Pharmaceutical Importers in the Philippines
@@ -248,7 +248,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5!">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
         <h1
           className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
@@ -272,7 +272,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5 px-5!">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
           <img
             src="/home7.jpg"
@@ -296,7 +296,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5!">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
         <h1
           className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
@@ -319,7 +319,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5 px-5!">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
           <img src="/home10.png" alt="" className="object-contain" />
         </div>
@@ -331,9 +331,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col gap-5">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col gap-5 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold text-3xl mx-5!"
+          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Strategic Fields
@@ -951,9 +951,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col gap-5">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col gap-5 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold text-3xl mx-5!"
+          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Upcoming Fields
@@ -1110,14 +1110,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! flex flex-col gap-5 mx-5!">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! flex flex-col gap-5 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold text-center text-3xl"
+          className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Why work with BND?
         </h1>
-        <div className="flex flex-col md:flex-row px-5! gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
