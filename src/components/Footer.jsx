@@ -139,7 +139,7 @@ export default function Footer() {
               className="text-[#6EC1E4] text-start"
               style={{ fontFamily: "Changa" }}
             >
-              Contant Numbers
+              Contact Number
             </h1>
             <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
               (02) 7617-2922
@@ -159,7 +159,7 @@ export default function Footer() {
               className="text-[#6EC1E4] text-start"
               style={{ fontFamily: "Changa" }}
             >
-              Locations
+              Location
             </h1>
             <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
               <span className="font-bold">Manila Office: </span>
@@ -230,7 +230,7 @@ export default function Footer() {
               className="text-[#6EC1E4] text-start"
               style={{ fontFamily: "Changa" }}
             >
-              Emails
+              Email
             </h1>
             <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
               banddpharma@gmail.com

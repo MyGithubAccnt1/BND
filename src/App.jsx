@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 export function Preloader() {
   return (
     <div className="h-[100dvh] w-[100dvw] flex items-center justify-center">
-      <img src="/preloader.svg" alt="Loading..." className="h-[60px]" />
+      <img src="preloader.svg" alt="Loading..." className="h-[60px]" />
     </div>
   );
 }

@@ -22,7 +22,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center gap-[150px] w-full md:w-[80dvw] lg:w-[75dvw] mx-5! md:mx-0!">
             <div>
               <NavLink to="/">
-                <img src="/icon.png" alt="BND" className="w-[85px] h-[85px]" />
+                <img src="icon.png" alt="BND" className="w-[85px] h-[85px]" />
               </NavLink>
             </div>
             <div className="hidden md:flex justify-center items-center gap-[30px] lg:gap-[50px]">
