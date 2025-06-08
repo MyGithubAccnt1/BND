@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 export default function Navbar() {
+  const baseName = import.meta.env.MODE === "development" ? "/" : "/BND/";
   const [button, setButton] = useState(false);
   const mobileNav = (isActive) =>
     `ps-5! font-bold py-3! mx-[15px]! w-[calc(100%-30px)] border border-x-0 ${
