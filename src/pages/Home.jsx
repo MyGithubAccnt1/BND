@@ -45,7 +45,7 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 md:flex-row md:gap-0">
         <img
-          src="home1.jpg"
+          src="/home1.jpg"
           alt="home1.jpg"
           className="object-cover object-top"
         />
@@ -242,7 +242,7 @@ export default function Home() {
           Top Pharmaceutical Importers in the Philippines
         </h1>
         <img
-          src="home6.jpg"
+          src="/home6.jpg"
           alt="BND Ranking"
           className="object-contain w-full md:w-[50%]"
         />
@@ -275,21 +275,21 @@ export default function Home() {
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
           <img
-            src="home7.jpg"
+            src="/home7.jpg"
             alt="DELCON FORTE"
             className="object-contain max-h-[950px]"
           />
         </div>
         <div>
           <img
-            src="home8.jpg"
+            src="/home8.jpg"
             alt="EPOTINE"
             className="object-contain max-h-[950px]"
           />
         </div>
         <div>
           <img
-            src="home9.jpg"
+            src="/home9.jpg"
             alt="GLOSARTAn"
             className="object-contain max-h-[950px]"
           />
@@ -321,13 +321,13 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
-          <img src="home10.png" alt="" className="object-contain" />
+          <img src="/home10.png" alt="" className="object-contain" />
         </div>
         <div>
-          <img src="home11.png" alt="" className="object-contain" />
+          <img src="/home11.png" alt="" className="object-contain" />
         </div>
         <div>
-          <img src="home12.png" alt="" className="object-contain" />
+          <img src="/home12.png" alt="" className="object-contain" />
         </div>
       </div>
 
