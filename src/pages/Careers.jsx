@@ -4,5 +4,5 @@ export default function Careers() {
       <h1 className="text-4xl font-bold mb-6">Careers</h1>
       <p className="text-lg mb-4">Join our team and make a difference.</p>
     </div>
-  )
-} 
+  );
+}
