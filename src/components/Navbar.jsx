@@ -20,8 +20,8 @@ export default function Navbar() {
     <>
       <div className="z-1 sticky top-0">
         <nav className="text-gray-500 h-[15dvh] flex justify-center items-center shadow-sm bg-[rgba(255,255,255,0.9)] dark:bg-[rgba(0,0,0,0.9)] [box-shadow:0_2px_4px_rgba(0,0,0,0.05)]">
-          <div className="flex justify-between items-center gap-[150px] w-full md:w-[80dvw] lg:w-[75dvw] mx-5! md:mx-0!">
-            <div>
+          <div className="flex justify-between items-center w-full md:w-[80dvw] lg:w-[75dvw] mx-5! md:mx-0!">
+            <div className="flex-shrink-0">
               <NavLink to="/">
                 <img
                   src={getAssetPath("icon.png")}
@@ -94,7 +94,7 @@ export default function Navbar() {
         </nav>
         <nav
           className={`
-            absolute h-[85dvh] text-gray-500 flex transition-all duration-500 w-full
+            absolute h-[85dvh] text-gray-500 flex transition-all duration-500 w-full md:-left-100!
             ${button ? "left-0" : "-left-100"}
           `}
         >

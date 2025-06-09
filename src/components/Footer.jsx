@@ -114,7 +114,7 @@ export default function Footer() {
     "Pet Prime International Corp (Companion Animals)",
   ];
   return (
-    <div className="mt-5! py-[20px]! bg-black">
+    <div className="mt-5! py-[20px]! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
       <div className="flex flex-col md:flex-row gap-y-5 justify-between">
         <div className="px-5! flex flex-col gap-y-5 text-justify">
           <div>
@@ -125,7 +125,7 @@ export default function Footer() {
               BND's Expertise and Experience in the Philippine Market
             </h1>
             <ul
-              className="text-gray-400 text-start"
+              className="text-gray-500 text-start"
               style={{ fontFamily: "Changa" }}
             >
               {companies.map((company) => (
@@ -141,13 +141,13 @@ export default function Footer() {
             >
               Contact Number
             </h1>
-            <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
+            <p className="text-gray-500" style={{ fontFamily: "Changa" }}>
               (02) 7617-2922
             </p>
-            <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
+            <p className="text-gray-500" style={{ fontFamily: "Changa" }}>
               (02) 8522-5393
             </p>
-            <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
+            <p className="text-gray-500" style={{ fontFamily: "Changa" }}>
               (+63) 0917 170 2970
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function Footer() {
             >
               Location
             </h1>
-            <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
+            <p className="text-gray-500" style={{ fontFamily: "Changa" }}>
               <span className="font-bold">Manila Office: </span>
               2111 Calamba St., Sampaloc, Manila, Philippines
             </p>
@@ -194,7 +194,7 @@ export default function Footer() {
                 href="https://www.facebook.com/bndpharmadistributor"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0866FF] w-[50px] h-[50px] rounded-md bg-black border border-white hover:bg-gray-800 flex items-center justify-center"
+                className="text-[#0866FF] w-[50px] h-[50px] rounded-md dark:bg-black dark:hover:bg-gray-900 border border-black dark:border-white hover:bg-black hover:border-white flex items-center justify-center"
               >
                 <FaFacebookF />
               </a>
@@ -202,7 +202,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@bndcorp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[50px] h-[50px] rounded-md bg-black border hover:bg-gray-800 flex items-center justify-center"
+                className="w-[50px] h-[50px] rounded-md text-black dark:text-white dark:hover:bg-gray-900 dark:bg-black border hover:bg-black hover:text-white flex items-center justify-center"
               >
                 <FaTiktok />
               </a>
@@ -210,7 +210,7 @@ export default function Footer() {
                 href="https://www.lazada.com.ph/shop/bndpharmacorp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[50px] h-[50px] rounded-md bg-black border hover:bg-gray-800 flex items-center justify-center"
+                className="w-[50px] h-[50px] rounded-md text-black dark:text-white dark:hover:bg-gray-900 dark:bg-black border hover:bg-black hover:border-white flex items-center justify-center"
               >
                 <FaLazada />
               </a>
@@ -218,7 +218,7 @@ export default function Footer() {
                 href="https://www.lazada.com.ph/shop/bndpharmacorp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[50px] h-[50px] px-3! rounded-md bg-black border hover:bg-gray-800 flex items-center justify-center"
+                className="w-[50px] h-[50px] px-3! rounded-md text-black dark:text-white dark:hover:bg-gray-900 dark:bg-black border hover:bg-black hover:border-white flex items-center justify-center"
               >
                 <FaShopee />
               </a>
@@ -232,20 +232,20 @@ export default function Footer() {
             >
               Email
             </h1>
-            <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
+            <p className="text-gray-500" style={{ fontFamily: "Changa" }}>
               banddpharma@gmail.com
             </p>
-            <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
+            <p className="text-gray-500" style={{ fontFamily: "Changa" }}>
               sales@bndpharma.com
             </p>
-            <p className="text-gray-400" style={{ fontFamily: "Changa" }}>
+            <p className="text-gray-500" style={{ fontFamily: "Changa" }}>
               business@bndpharma.com
             </p>
           </div>
         </div>
       </div>
       <p
-        className="text-gray-400 text-center mt-[25px]!"
+        className="text-gray-500 text-center mt-[25px]!"
         style={{ fontFamily: "Changa" }}
       >
         &#169; 2025 BND Pharma and Medical Supplies Distribution Corp. All

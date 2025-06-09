@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useInView } from 'react-intersection-observer';
 import Slider from "react-infinite-logo-slider";
 import { getAssetPath } from "../utils/pathUtils";
 
@@ -7,16 +8,158 @@ export default function Home() {
     {
       src: getAssetPath("hero1.jpg"),
       alt: "IMMUMAX",
-      className: "w-full h-[calc(100dvh-120px)] object-cover",
+      className: "w-full h-[85dvh] object-cover",
     },
     {
       src: getAssetPath("hero2.jpg"),
       alt: "BND",
-      className: "w-full h-[calc(100dvh-120px)] object-cover",
+      className: "w-full h-[85dvh] object-cover",
     },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { ref: refImg, inView: inViewImg } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count1, setCount1] = useState(0);
+  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count2, setCount2] = useState(0);
+  const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count3, setCount3] = useState(0);
+  const { ref: ref4, inView: inView4 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count4, setCount4] = useState(0);
+  const { ref: ref5, inView: inView5 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count5, setCount5] = useState(0);
+  const { ref: ref6, inView: inView6 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count6, setCount6] = useState(0);
+  const { ref: ref7, inView: inView7 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count7, setCount7] = useState(0);
+  const { ref: ref8, inView: inView8 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count8, setCount8] = useState(0);  
+  const { ref: ref9, inView: inView9 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count9, setCount9] = useState(0);
+  const { ref: ref10, inView: inView10 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count10, setCount10] = useState(0);
+  const { ref: ref11, inView: inView11 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count11, setCount11] = useState(0);
+  const { ref: ref12, inView: inView12 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count12, setCount12] = useState(0);
+  const { ref: ref13, inView: inView13 } = useInView({ threshold: 0.1, triggerOnce: true });
+  const [count13, setCount13] = useState(0);
+
+  function countUp(target, setCount, duration = 2000) {
+    let start = 0;
+    let steps = 0;
+    if (target > 500) {
+      steps = 400
+    } else {
+      steps = 500
+    }
+    const stepTime = Math.floor(duration / steps);
+    const increment = Math.max(Math.ceil(target / steps), 1);
+  
+    const interval = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(interval);
+      } else {
+        setCount(start);
+      }
+    }, stepTime);
+  
+    return () => clearInterval(interval);
+  }
+
+  useEffect(() => {
+    if (inView1) {
+      const cleanup = countUp(5, setCount1, 500);
+      return cleanup;
+    }
+  }, [inView1]);
+
+  useEffect(() => {
+    if (inView2) {
+      const cleanup = countUp(1, setCount2, 500);
+      return cleanup;
+    }
+  }, [inView2]);
+
+  useEffect(() => {
+    if (inView3) {
+      const cleanup = countUp(50, setCount3, 500);
+      return cleanup;
+    }
+  }, [inView3]);
+
+  useEffect(() => {
+    if (inView4) {
+      const cleanup = countUp(250, setCount4, 500);
+      return cleanup;
+    }
+  }, [inView4]);
+
+  useEffect(() => {
+    if (inView5) {
+      const cleanup = countUp(250, setCount5, 500);
+      return cleanup;
+    }
+  }, [inView5]);
+
+  useEffect(() => {
+    if (inView6) {
+      const cleanup = countUp(1000, setCount6, 500);
+      return cleanup;
+    }
+  }, [inView6]);
+
+  useEffect(() => {
+    if (inView7) {
+      const cleanup = countUp(200, setCount7, 500);
+      return cleanup;
+    }
+  }, [inView7]);
+
+  useEffect(() => {
+    if (inView8) {
+      const cleanup = countUp(150, setCount8, 500);
+      return cleanup;
+    }
+  }, [inView8]);
+
+  useEffect(() => {
+    if (inView9) {
+      const cleanup = countUp(250, setCount9, 500);
+      return cleanup;
+    }
+  }, [inView9]);
+
+  useEffect(() => {
+    if (inView10) {
+      const cleanup = countUp(15, setCount10, 500);
+      return cleanup;
+    }
+  }, [inView10]);
+
+  useEffect(() => {
+    if (inView11) {
+      const cleanup = countUp(2000, setCount11, 500);
+      return cleanup;
+    }
+  }, [inView11]);
+
+  useEffect(() => {
+    if (inView12) {
+      const cleanup = countUp(30, setCount12, 500);
+      return cleanup;
+    }
+  }, [inView12]);
+
+  useEffect(() => {
+    if (inView13) {
+      const cleanup = countUp(100, setCount13, 500);
+      return cleanup;
+    }
+  }, [inView13]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,6 +179,20 @@ export default function Home() {
     { src: getAssetPath("home5.png"), alt: "Pet Prime Logo" },
   ];
 
+  const style = {
+    backgroundImage: `
+      linear-gradient(158deg, rgba(84, 84, 84, 0.03) 0%, rgba(84, 84, 84, 0.03) 20%, rgba(219, 219, 219, 0.03) 20%, rgba(219, 219, 219, 0.03) 40%, rgba(54, 54, 54, 0.03) 40%, rgba(54, 54, 54, 0.03) 60%, rgba(99, 99, 99, 0.03) 60%, rgba(99, 99, 99, 0.03) 80%, rgba(92, 92, 92, 0.03) 80%, rgba(92, 92, 92, 0.03) 100%),
+      linear-gradient(45deg, rgba(221, 221, 221, 0.02) 0%, rgba(221, 221, 221, 0.02) 14.286%, rgba(8, 8, 8, 0.02) 14.286%, rgba(8, 8, 8, 0.02) 28.572%, rgba(52, 52, 52, 0.02) 28.572%, rgba(52, 52, 52, 0.02) 42.858%, rgba(234, 234, 234, 0.02) 42.858%, rgba(234, 234, 234, 0.02) 57.144%, rgba(81, 81, 81, 0.02) 57.144%, rgba(81, 81, 81, 0.02) 71.43%, rgba(239, 239, 239, 0.02) 71.43%, rgba(239, 239, 239, 0.02) 85.716%, rgba(187, 187, 187, 0.02) 85.716%, rgba(187, 187, 187, 0.02) 100.002%),
+      linear-gradient(109deg, rgba(33, 33, 33, 0.03) 0%, rgba(33, 33, 33, 0.03) 12.5%, rgba(147, 147, 147, 0.03) 12.5%, rgba(147, 147, 147, 0.03) 25%, rgba(131, 131, 131, 0.03) 25%, rgba(131, 131, 131, 0.03) 37.5%, rgba(151, 151, 151, 0.03) 37.5%, rgba(151, 151, 151, 0.03) 50%, rgba(211, 211, 211, 0.03) 50%, rgba(211, 211, 211, 0.03) 62.5%, rgba(39, 39, 39, 0.03) 62.5%, rgba(39, 39, 39, 0.03) 75%, rgba(55, 55, 55, 0.03) 75%, rgba(55, 55, 55, 0.03) 87.5%, rgba(82, 82, 82, 0.03) 87.5%, rgba(82, 82, 82, 0.03) 100%),
+      linear-gradient(348deg, rgba(42, 42, 42, 0.02) 0%, rgba(42, 42, 42, 0.02) 20%, rgba(8, 8, 8, 0.02) 20%, rgba(8, 8, 8, 0.02) 40%, rgba(242, 242, 242, 0.02) 40%, rgba(242, 242, 242, 0.02) 60%, rgba(42, 42, 42, 0.02) 60%, rgba(42, 42, 42, 0.02) 80%, rgba(80, 80, 80, 0.02) 80%, rgba(80, 80, 80, 0.02) 100%),
+      linear-gradient(120deg, rgba(106, 106, 106, 0.03) 0%, rgba(106, 106, 106, 0.03) 14.286%, rgba(67, 67, 67, 0.03) 14.286%, rgba(67, 67, 67, 0.03) 28.572%, rgba(134, 134, 134, 0.03) 28.572%, rgba(134, 134, 134, 0.03) 42.858%, rgba(19, 19, 19, 0.03) 42.858%, rgba(19, 19, 19, 0.03) 57.144%, rgba(101, 101, 101, 0.03) 57.144%, rgba(101, 101, 101, 0.03) 71.43%, rgba(205, 205, 205, 0.03) 71.43%, rgba(205, 205, 205, 0.03) 85.716%, rgba(53, 53, 53, 0.03) 85.716%, rgba(53, 53, 53, 0.03) 100.002%),
+      linear-gradient(45deg, rgba(214, 214, 214, 0.03) 0%, rgba(214, 214, 214, 0.03) 16.667%, rgba(255, 255, 255, 0.03) 16.667%, rgba(255, 255, 255, 0.03) 33.334%, rgba(250, 250, 250, 0.03) 33.334%, rgba(250, 250, 250, 0.03) 50.001%, rgba(231, 231, 231, 0.03) 50.001%, rgba(231, 231, 231, 0.03) 66.668%, rgba(241, 241, 241, 0.03) 66.668%, rgba(241, 241, 241, 0.03) 83.335%, rgba(31, 31, 31, 0.03) 83.335%, rgba(31, 31, 31, 0.03) 100.002%),
+      linear-gradient(59deg, rgba(224, 224, 224, 0.03) 0%, rgba(224, 224, 224, 0.03) 12.5%, rgba(97, 97, 97, 0.03) 12.5%, rgba(97, 97, 97, 0.03) 25%, rgba(143, 143, 143, 0.03) 25%, rgba(143, 143, 143, 0.03) 37.5%, rgba(110, 110, 110, 0.03) 37.5%, rgba(110, 110, 110, 0.03) 50%, rgba(34, 34, 34, 0.03) 50%, rgba(34, 34, 34, 0.03) 62.5%, rgba(155, 155, 155, 0.03) 62.5%, rgba(155, 155, 155, 0.03) 75%, rgba(249, 249, 249, 0.03) 75%, rgba(249, 249, 249, 0.03) 87.5%, rgba(179, 179, 179, 0.03) 87.5%, rgba(179, 179, 179, 0.03) 100%),
+      linear-gradient(241deg, rgba(58, 58, 58, 0.02) 0%, rgba(58, 58, 58, 0.02) 25%, rgba(124, 124, 124, 0.02) 25%, rgba(124, 124, 124, 0.02) 50%, rgba(254, 254, 254, 0.02) 50%, rgba(254, 254, 254, 0.02) 75%, rgba(52, 52, 52, 0.02) 75%, rgba(52, 52, 52, 0.02) 100%),
+      linear-gradient(90deg, #ffffff, #ffffff)
+    `
+  };
+
   return (
     <div className="flex flex-col gap-5">
       <img
@@ -46,9 +203,12 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 md:flex-row md:gap-0">
         <img
+          ref={refImg}
           src={getAssetPath("home1.jpg")}
           alt="home1.jpg"
-          className="w-full md:w-[50%]"
+          className={`w-full md:w-[50%] transform transition-all duration-700 ease-out ${
+            inViewImg ? "scale-100 opacity-100" : "scale-50 opacity-0"
+          }`}
         />
         <div className="flex flex-col gap-5 px-5!">
           <h1
@@ -80,33 +240,35 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto!">
-        <h1
-          className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
-          style={{ fontFamily: "Changa" }}
+      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
+        <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! mb-[30px]!">
+          <h1
+            className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
+            style={{ fontFamily: "Changa" }}
+          >
+            BND Group of Companies
+          </h1>
+        </div>
+
+        <Slider
+          duration={20}
+          pauseOnHover={true}
+          blurBorders={false}
+          blurBorderColor={"#fff"}
         >
-          BND Group of Companies
-        </h1>
+          {groupOfCompanies.map((company, index) => (
+            <Slider.Slide key={index}>
+              <img
+                className="max-h-[150px] max-w-[200px] mx-auto!"
+                src={company.src}
+                alt={company.alt}
+              />
+            </Slider.Slide>
+          ))}
+        </Slider>
       </div>
 
-      <Slider
-        duration={20}
-        pauseOnHover={true}
-        blurBorders={false}
-        blurBorderColor={"#fff"}
-      >
-        {groupOfCompanies.map((company, index) => (
-          <Slider.Slide key={index}>
-            <img
-              className="max-h-[150px] max-w-[200px] mx-auto!"
-              src={company.src}
-              alt={company.alt}
-            />
-          </Slider.Slide>
-        ))}
-      </Slider>
-
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 mx-5!">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-[30px] mx-5! py-[50px]!">
         <h1
           className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
@@ -114,48 +276,48 @@ export default function Home() {
           Overview of AMB's Success
         </h1>
         <div className="flex flex-col md:flex-row gap-4 mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              TOP 5
+              TOP <span ref={ref1}>{count1}</span>
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               Pharmaceutical Importer in Philippines (in terms of Sales)
             </p>
           </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              TOP 1
+              TOP <span ref={ref2}>{count2}</span>
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               Pharmaceutical Importer in Philippines (in terms of Volume)
             </p>
           </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              50+
+              <span ref={ref3}>{count3}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               GMP registered for foreign manufacturer
             </p>
           </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              250+
+              <span ref={ref4}>{count4}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               Partner distributors
@@ -173,60 +335,60 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              250+
+              <span ref={ref5}>{count5}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               BND Employees
             </p>
           </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              1000+
+              <span ref={ref6}>{count6}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Drugs Registered)
             </p>
           </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              200+
+              <span ref={ref7}>{count7}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Medical Devices Registered)
             </p>
           </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              150+
+              <span ref={ref8}>{count8}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Food Supplements Registered)
             </p>
           </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
+          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              250+
+              <span ref={ref9}>{count9}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Cosmetics Registered)
@@ -235,23 +397,25 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col items-center gap-5 md:flex-row md:gap-0 px-5! md:px-0!">
-        <h1
-          className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
-          style={{ fontFamily: "Changa" }}
-        >
-          Top Pharmaceutical Importers in the Philippines
-        </h1>
-        <img
-          src={getAssetPath("home6.jpg")}
-          alt="BND Ranking"
-          className="object-contain w-full md:w-[50%] dark:invert"
-        />
+      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
+        <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col items-center gap-5 md:flex-row md:gap-0 px-5! md:px-0!">
+          <h1
+            className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
+            style={{ fontFamily: "Changa" }}
+          >
+            Top Pharmaceutical Importers in the Philippines
+          </h1>
+          <img
+            src={getAssetPath("home6.png")}
+            alt="BND Ranking"
+            className="object-contain w-full md:w-[50%]"
+          />
+        </div>
       </div>
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
+          className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           What We Do
@@ -297,63 +461,65 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
-        <h1
-          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
-          style={{ fontFamily: "Changa" }}
-        >
-          Regional and National Distributors
-        </h1>
-        <p
-          className="text-justify text-[#7A7A7A]"
-          style={{ fontFamily: "Karla" }}
-        >
-          AMB-HK Enterprises is also engaged in partnership with top regional
-          and national distributors in which they help to sustain a complex
-          supply chain, serving as an important link in the healthcare system
-          and delivering medicines safely, securely and efficiently.
-          Distributors who work around the clock to help hundreds of thousands
-          of pharmacies, hospitals, long-term care facilities, clinics and other
-          healthcare providers across the country together with our objective of
-          keeping our shelves stocked with the quality and affordable
-          medications and products that patients need.
-        </p>
-      </div>
+      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
+        <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
+          <h1
+            className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
+            style={{ fontFamily: "Changa" }}
+          >
+            Regional and National Distributors
+          </h1>
+          <p
+            className="text-justify text-[#7A7A7A]"
+            style={{ fontFamily: "Karla" }}
+          >
+            AMB-HK Enterprises is also engaged in partnership with top regional
+            and national distributors in which they help to sustain a complex
+            supply chain, serving as an important link in the healthcare system
+            and delivering medicines safely, securely and efficiently.
+            Distributors who work around the clock to help hundreds of thousands
+            of pharmacies, hospitals, long-term care facilities, clinics and other
+            healthcare providers across the country together with our objective of
+            keeping our shelves stocked with the quality and affordable
+            medications and products that patients need.
+          </p>
+        </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
-        <div>
-          <img
-            src={getAssetPath("home10.png")}
-            alt=""
-            className="object-contain"
-          />
-        </div>
-        <div>
-          <img
-            src={getAssetPath("home11.png")}
-            alt=""
-            className="object-contain"
-          />
-        </div>
-        <div>
-          <img
-            src={getAssetPath("home12.png")}
-            alt=""
-            className="object-contain"
-          />
+        <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
+          <div>
+            <img
+              src={getAssetPath("home10.png")}
+              alt=""
+              className="object-contain"
+            />
+          </div>
+          <div>
+            <img
+              src={getAssetPath("home11.png")}
+              alt=""
+              className="object-contain"
+            />
+          </div>
+          <div>
+            <img
+              src={getAssetPath("home12.png")}
+              alt=""
+              className="object-contain"
+            />
+          </div>
         </div>
       </div>
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col gap-5 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
+          className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Strategic Fields
         </h1>
         <div className="flex flex-col md:flex-row flex-wrap gap-y-5">
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -417,7 +583,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -490,7 +656,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -538,7 +704,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -580,7 +746,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -644,7 +810,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -692,7 +858,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -752,7 +918,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -804,7 +970,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -870,7 +1036,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -963,17 +1129,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col gap-5 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
+          className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Upcoming Fields
         </h1>
         <div className="flex flex-col md:flex-row flex-wrap gap-y-5">
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -1029,7 +1195,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -1073,7 +1239,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col md:w-1/5">
-            <svg className="h-[100px]" viewBox="0 0 120 120">
+            <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
                 <style>
                   {`
@@ -1123,62 +1289,64 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! flex flex-col gap-5 px-5! md:px-0!">
-        <h1
-          className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
-          style={{ fontFamily: "Changa" }}
-        >
-          Why work with BND?
-        </h1>
-        <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center lg:flex-nowrap">
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              15YRS
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              Experience in the Pharmaceutical Importation and Distribution in
-              the Philippines
-            </p>
-          </div>
+      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
+        <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! flex flex-col gap-5 px-5! md:px-0!">
+          <h1
+            className="text-[#6EC1E4] font-bold text-center text-3xl md:text-4xl lg:text-5xl"
+            style={{ fontFamily: "Changa" }}
+          >
+            Why work with BND?
+          </h1>
+          <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center lg:flex-nowrap">
+            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+              <h1
+                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={ref10}>{count10}</span>YRS
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                Experience in the Pharmaceutical Importation and Distribution in
+                the Philippines
+              </p>
+            </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              2000+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              Batch Notifications for Antibiotic from 2018-2023 (Top 1
-              Antibiotic Importer in the Philippines)
-            </p>
-          </div>
+            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+              <h1
+                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={ref11}>{count11}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                Batch Notifications for Antibiotic from 2018-2023 (Top 1
+                Antibiotic Importer in the Philippines)
+              </p>
+            </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              30+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              Experienced Regulatory Pharmacist in AMB HK Regulatory Team
-            </p>
-          </div>
+            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+              <h1
+                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={ref12}>{count12}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                Experienced Regulatory Pharmacist in AMB HK Regulatory Team
+              </p>
+            </div>
 
-          <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              100%
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              Reach in all 82 provinces of the Philippines
-            </p>
+            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+              <h1
+                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={ref13}>{count13}</span>%
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                Reach in all 82 provinces of the Philippines
+              </p>
+            </div>
           </div>
         </div>
       </div>

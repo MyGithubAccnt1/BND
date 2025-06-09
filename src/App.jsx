@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAssetPath } from "./utils/pathUtils";
 import Navbar from "./components/Navbar";
@@ -51,7 +51,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[#FFFFFF] dark:bg-[#0D0D0D]">
         <Navbar />
         <main>
           <Outlet />
