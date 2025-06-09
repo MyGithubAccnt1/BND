@@ -1,12 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAssetPath } from "./utils/pathUtils";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import AboutBND from "./pages/AboutBND";
-import Products from "./pages/Products";
-import Careers from "./pages/Careers";
-import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 
 export function Preloader() {
@@ -18,13 +13,21 @@ export function Preloader() {
 }
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    const hasLoaded = localStorage.getItem('hasLoadedBefore');
+    return !hasLoaded;
+  });
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
+    if (loading) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        localStorage.setItem('hasLoadedBefore', 'true');
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -51,13 +54,7 @@ function App() {
       <div className="min-h-screen">
         <Navbar />
         <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-bnd" element={<AboutBND />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <Outlet />
         </main>
         <Footer />
       </div>
