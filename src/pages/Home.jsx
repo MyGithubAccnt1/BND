@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import Slider from "react-infinite-logo-slider";
+import { getAssetPath } from "../utils/pathUtils";
 
 export default function Home() {
-  const baseName = import.meta.env.MODE === "development" ? "/" : "/BND/";
   const background = [
     {
-      src: `${baseName}hero1.jpg`,
+      src: getAssetPath("hero1.jpg"),
       alt: "IMMUMAX",
       className: "w-full h-[calc(100dvh-120px)] object-cover",
     },
     {
-      src: `${baseName}hero2.jpg`,
+      src: getAssetPath("hero2.jpg"),
       alt: "BND",
       className: "w-full h-[calc(100dvh-120px)] object-cover",
     },
@@ -29,11 +29,11 @@ export default function Home() {
   }, []);
 
   const groupOfCompanies = [
-    { src: `${baseName}icon.png`, alt: "BND Logo" },
-    { src: `${baseName}home2.png`, alt: "PhilRX Logo" },
-    { src: `${baseName}home3.png`, alt: "FSPC Logo" },
-    { src: `${baseName}home4.png`, alt: "P&D Medivet Logo" },
-    { src: `${baseName}home5.png`, alt: "Pet Prime Logo" },
+    { src: getAssetPath("icon.png"), alt: "BND Logo" },
+    { src: getAssetPath("home2.png"), alt: "PhilRX Logo" },
+    { src: getAssetPath("home3.png"), alt: "FSPC Logo" },
+    { src: getAssetPath("home4.png"), alt: "P&D Medivet Logo" },
+    { src: getAssetPath("home5.png"), alt: "Pet Prime Logo" },
   ];
 
   return (
@@ -46,9 +46,9 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 md:flex-row md:gap-0">
         <img
-          src={`${baseName}home1.jpg`}
+          src={getAssetPath("home1.jpg")}
           alt="home1.jpg"
-          className="object-cover object-top"
+          className="w-full md:w-[50%]"
         />
         <div className="flex flex-col gap-5 px-5!">
           <h1
@@ -106,14 +106,14 @@ export default function Home() {
         ))}
       </Slider>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! flex flex-col gap-5 mx-5!">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 mx-5!">
         <h1
           className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Overview of AMB's Success
         </h1>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
           <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
@@ -163,16 +163,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative flex justify-center items-center">
+        <div className="relative flex justify-center items-center mx-5!">
           <span className='content-[""] bg-[#7A7A7A] h-[1px] w-full'></span>
-          <span className='absolute content-[""] bg-white w-[40px] flex justify-center items-center'>
-            <span className='content-[""] bg-black rounded-full w-[20px] h-[20px] flex justify-center items-center'>
-              <span className='content-[""] bg-white rounded-full w-[7px] h-[7px]'></span>
+          <span className='absolute content-[""] bg-white dark:bg-transparent w-[40px] flex justify-center items-center'>
+            <span className='content-[""] bg-black dark:bg-white rounded-full w-[20px] h-[20px] flex justify-center items-center'>
+              <span className='content-[""] bg-white dark:bg-black rounded-full w-[7px] h-[7px]'></span>
             </span>
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-3">
+        <div className="flex flex-col md:flex-row gap-4 mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
           <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
@@ -237,15 +237,15 @@ export default function Home() {
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col items-center gap-5 md:flex-row md:gap-0 px-5! md:px-0!">
         <h1
-          className="text-[#6EC1E4] font-bold text-3xl md:text-5xl"
+          className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "Changa" }}
         >
           Top Pharmaceutical Importers in the Philippines
         </h1>
         <img
-          src={`${baseName}home6.jpg`}
+          src={getAssetPath("home6.jpg")}
           alt="BND Ranking"
-          className="object-contain w-full md:w-[50%]"
+          className="object-contain w-full md:w-[50%] dark:invert"
         />
       </div>
 
@@ -261,11 +261,11 @@ export default function Home() {
           style={{ fontFamily: "Karla" }}
         >
           AMB-HK Enterprises also specialized in creating OEM or in-house
-          branding; as one of AMB’s strengths is our satellite purchasing office
+          branding; as one of AMB's strengths is our satellite purchasing office
           in China that deals with more than 30 suppliers – Local and
-          International manufacturers that are GMP accredited. Our company’s
+          International manufacturers that are GMP accredited. Our company's
           capacity is beyond expectation as we can work and handle extensive
-          requirements based on the client’s desired packing, formula or
+          requirements based on the client's desired packing, formula or
           molecule. We do not only create the brand for you but we will provide
           end to end support from documentation, registration and importation.
           All you have to do is create the brand in your mind and we will make
@@ -276,21 +276,21 @@ export default function Home() {
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
           <img
-            src={`${baseName}home7.jpg`}
+            src={getAssetPath("home7.jpg")}
             alt="DELCON FORTE"
             className="object-contain max-h-[950px]"
           />
         </div>
         <div>
           <img
-            src={`${baseName}home8.jpg`}
+            src={getAssetPath("home8.jpg")}
             alt="EPOTINE"
             className="object-contain max-h-[950px]"
           />
         </div>
         <div>
           <img
-            src={`${baseName}home9.jpg`}
+            src={getAssetPath("home9.jpg")}
             alt="GLOSARTAn"
             className="object-contain max-h-[950px]"
           />
@@ -323,21 +323,21 @@ export default function Home() {
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col md:flex-row gap-5">
         <div>
           <img
-            src={`${baseName}home10.png`}
+            src={getAssetPath("home10.png")}
             alt=""
             className="object-contain"
           />
         </div>
         <div>
           <img
-            src={`${baseName}home11.png`}
+            src={getAssetPath("home11.png")}
             alt=""
             className="object-contain"
           />
         </div>
         <div>
           <img
-            src={`${baseName}home12.png`}
+            src={getAssetPath("home12.png")}
             alt=""
             className="object-contain"
           />
@@ -1130,7 +1130,7 @@ export default function Home() {
         >
           Why work with BND?
         </h1>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center lg:flex-nowrap">
           <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5!">
             <h1
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"

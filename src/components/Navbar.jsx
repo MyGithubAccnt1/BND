@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { getAssetPath } from "../utils/pathUtils";
 
 export default function Navbar() {
-  const baseName = import.meta.env.MODE === "development" ? "/" : "/BND/";
   const [button, setButton] = useState(false);
   const mobileNav = (isActive) =>
     `ps-5! font-bold py-3! mx-[15px]! w-[calc(100%-30px)] border border-x-0 ${
@@ -24,7 +24,7 @@ export default function Navbar() {
             <div>
               <NavLink to="/">
                 <img
-                  src={`${baseName}icon.png`}
+                  src={getAssetPath("icon.png")}
                   alt="BND"
                   className="w-[85px] h-[85px]"
                 />
@@ -62,7 +62,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setButton(!button)}
-              className="w-[35px] h-[35px]"
+              className="w-[35px] h-[35px] md:pointer-events-none"
             >
               <div
                 className={`

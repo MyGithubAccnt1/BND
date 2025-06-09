@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getAssetPath } from "./utils/pathUtils";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutBND from "./pages/AboutBND";
@@ -11,7 +12,7 @@ import Footer from "./components/Footer";
 export function Preloader() {
   return (
     <div className="h-[100dvh] w-[100dvw] flex items-center justify-center">
-      <img src="preloader.svg" alt="Loading..." className="h-[60px]" />
+      <img src={getAssetPath("preloader.svg")} alt="Loading..." className="h-[60px]" />
     </div>
   );
 }
