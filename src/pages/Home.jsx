@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useInView } from 'react-intersection-observer';
 import Slider from "react-infinite-logo-slider";
 import { getAssetPath } from "../utils/pathUtils";
@@ -19,147 +19,48 @@ export default function Home() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const { ref: refImg, inView: inViewImg } = useInView({ threshold: 0.1, triggerOnce: true });
-  const { ref: ref1, inView: inView1 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count1, setCount1] = useState(0);
-  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count2, setCount2] = useState(0);
-  const { ref: ref3, inView: inView3 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count3, setCount3] = useState(0);
-  const { ref: ref4, inView: inView4 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count4, setCount4] = useState(0);
-  const { ref: ref5, inView: inView5 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count5, setCount5] = useState(0);
-  const { ref: ref6, inView: inView6 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count6, setCount6] = useState(0);
-  const { ref: ref7, inView: inView7 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count7, setCount7] = useState(0);
-  const { ref: ref8, inView: inView8 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count8, setCount8] = useState(0);  
-  const { ref: ref9, inView: inView9 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count9, setCount9] = useState(0);
-  const { ref: ref10, inView: inView10 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count10, setCount10] = useState(0);
-  const { ref: ref11, inView: inView11 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count11, setCount11] = useState(0);
-  const { ref: ref12, inView: inView12 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count12, setCount12] = useState(0);
-  const { ref: ref13, inView: inView13 } = useInView({ threshold: 0.1, triggerOnce: true });
-  const [count13, setCount13] = useState(0);
 
-  function countUp(target, setCount, duration = 2000) {
-    let start = 0;
-    let steps = 0;
-    if (target > 500) {
-      steps = 400
-    } else {
-      steps = 500
-    }
-    const stepTime = Math.floor(duration / steps);
-    const increment = Math.max(Math.ceil(target / steps), 1);
+  function useCounter(target, duration = 500) {
+    const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+    const [count, setCount] = useState(0);
   
-    const interval = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(interval);
-      } else {
-        setCount(start);
-      }
-    }, stepTime);
+    useEffect(() => {
+      if (!inView) return;
   
-    return () => clearInterval(interval);
+      let start = 0;
+      const steps = target > 500 ? 400 : 500;
+      const stepTime = Math.floor(duration / steps);
+      const increment = Math.max(Math.ceil(target / steps), 1);
+  
+      const interval = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          setCount(target);
+          clearInterval(interval);
+        } else {
+          setCount(start);
+        }
+      }, stepTime);
+  
+      return () => clearInterval(interval);
+    }, [inView, target, duration]);
+  
+    return { ref, count };
   }
 
-  useEffect(() => {
-    if (inView1) {
-      const cleanup = countUp(5, setCount1, 500);
-      return cleanup;
-    }
-  }, [inView1]);
-
-  useEffect(() => {
-    if (inView2) {
-      const cleanup = countUp(1, setCount2, 500);
-      return cleanup;
-    }
-  }, [inView2]);
-
-  useEffect(() => {
-    if (inView3) {
-      const cleanup = countUp(50, setCount3, 500);
-      return cleanup;
-    }
-  }, [inView3]);
-
-  useEffect(() => {
-    if (inView4) {
-      const cleanup = countUp(250, setCount4, 500);
-      return cleanup;
-    }
-  }, [inView4]);
-
-  useEffect(() => {
-    if (inView5) {
-      const cleanup = countUp(250, setCount5, 500);
-      return cleanup;
-    }
-  }, [inView5]);
-
-  useEffect(() => {
-    if (inView6) {
-      const cleanup = countUp(1000, setCount6, 500);
-      return cleanup;
-    }
-  }, [inView6]);
-
-  useEffect(() => {
-    if (inView7) {
-      const cleanup = countUp(200, setCount7, 500);
-      return cleanup;
-    }
-  }, [inView7]);
-
-  useEffect(() => {
-    if (inView8) {
-      const cleanup = countUp(150, setCount8, 500);
-      return cleanup;
-    }
-  }, [inView8]);
-
-  useEffect(() => {
-    if (inView9) {
-      const cleanup = countUp(250, setCount9, 500);
-      return cleanup;
-    }
-  }, [inView9]);
-
-  useEffect(() => {
-    if (inView10) {
-      const cleanup = countUp(15, setCount10, 500);
-      return cleanup;
-    }
-  }, [inView10]);
-
-  useEffect(() => {
-    if (inView11) {
-      const cleanup = countUp(2000, setCount11, 500);
-      return cleanup;
-    }
-  }, [inView11]);
-
-  useEffect(() => {
-    if (inView12) {
-      const cleanup = countUp(30, setCount12, 500);
-      return cleanup;
-    }
-  }, [inView12]);
-
-  useEffect(() => {
-    if (inView13) {
-      const cleanup = countUp(100, setCount13, 500);
-      return cleanup;
-    }
-  }, [inView13]);
+  const c1 = useCounter(5);
+  const c2 = useCounter(1);
+  const c3 = useCounter(50);
+  const c4 = useCounter(250);
+  const c5 = useCounter(250);
+  const c6 = useCounter(1000);
+  const c7 = useCounter(200);
+  const c8 = useCounter(150);
+  const c9 = useCounter(250);
+  const c10 = useCounter(15);
+  const c11 = useCounter(2000);
+  const c12 = useCounter(30);
+  const c13 = useCounter(100);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -281,7 +182,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              TOP <span ref={ref1}>{count1}</span>
+              TOP <span ref={c1.ref}>{c1.count}</span>
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               Pharmaceutical Importer in Philippines (in terms of Sales)
@@ -293,7 +194,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              TOP <span ref={ref2}>{count2}</span>
+              TOP <span ref={c2.ref}>{c2.count}</span>
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               Pharmaceutical Importer in Philippines (in terms of Volume)
@@ -305,7 +206,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              <span ref={ref3}>{count3}</span>+
+              <span ref={c3.ref}>{c3.count}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               GMP registered for foreign manufacturer
@@ -317,7 +218,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              <span ref={ref4}>{count4}</span>+
+              <span ref={c4.ref}>{c4.count}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               Partner distributors
@@ -340,7 +241,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              <span ref={ref5}>{count5}</span>+
+              <span ref={c5.ref}>{c5.count}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               BND Employees
@@ -352,7 +253,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              <span ref={ref6}>{count6}</span>+
+              <span ref={c6.ref}>{c6.count}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Drugs Registered)
@@ -364,7 +265,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              <span ref={ref7}>{count7}</span>+
+              <span ref={c7.ref}>{c7.count}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Medical Devices Registered)
@@ -376,7 +277,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              <span ref={ref8}>{count8}</span>+
+              <span ref={c8.ref}>{c8.count}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Food Supplements Registered)
@@ -388,7 +289,7 @@ export default function Home() {
               className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
               style={{ fontFamily: "Changa" }}
             >
-              <span ref={ref9}>{count9}</span>+
+              <span ref={c9.ref}>{c9.count}</span>+
             </h1>
             <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
               CPRs (Cosmetics Registered)
@@ -1303,7 +1204,7 @@ export default function Home() {
                 className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
                 style={{ fontFamily: "Changa" }}
               >
-                <span ref={ref10}>{count10}</span>YRS
+                <span ref={c10.ref}>{c10.count}</span>YRS
               </h1>
               <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
                 Experience in the Pharmaceutical Importation and Distribution in
@@ -1316,7 +1217,7 @@ export default function Home() {
                 className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
                 style={{ fontFamily: "Changa" }}
               >
-                <span ref={ref11}>{count11}</span>+
+                <span ref={c11.ref}>{c11.count}</span>+
               </h1>
               <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
                 Batch Notifications for Antibiotic from 2018-2023 (Top 1
@@ -1329,7 +1230,7 @@ export default function Home() {
                 className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
                 style={{ fontFamily: "Changa" }}
               >
-                <span ref={ref12}>{count12}</span>+
+                <span ref={c12.ref}>{c12.count}</span>+
               </h1>
               <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
                 Experienced Regulatory Pharmacist in AMB HK Regulatory Team
@@ -1341,7 +1242,7 @@ export default function Home() {
                 className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
                 style={{ fontFamily: "Changa" }}
               >
-                <span ref={ref13}>{count13}</span>%
+                <span ref={c13.ref}>{c13.count}</span>%
               </h1>
               <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
                 Reach in all 82 provinces of the Philippines

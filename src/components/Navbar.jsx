@@ -62,7 +62,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setButton(!button)}
-              className="w-[35px] h-[35px] md:pointer-events-none"
+              className="w-[35px] h-[35px] md:hidden"
             >
               <div
                 className={`
