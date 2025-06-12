@@ -70,7 +70,7 @@ export default function Home() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  },);
 
   const groupOfCompanies = [
     { src: getAssetPath("icon.png"), alt: "BND Logo" },
@@ -362,7 +362,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
+      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]! flex flex-col gap-y-5">
         <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
           <h1
             className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
@@ -418,7 +418,7 @@ export default function Home() {
         >
           Strategic Fields
         </h1>
-        <div className="flex flex-col md:flex-row flex-wrap gap-y-5">
+        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-y-5">
           <div className="flex flex-col md:w-1/5">
             <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
@@ -1038,7 +1038,7 @@ export default function Home() {
         >
           Upcoming Fields
         </h1>
-        <div className="flex flex-col md:flex-row flex-wrap gap-y-5">
+        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-y-5">
           <div className="flex flex-col md:w-1/5">
             <svg className="h-[85px]" viewBox="0 0 120 120">
               <defs>
