@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
 import Slider from "react-infinite-logo-slider";
 import { getAssetPath } from "../utils/pathUtils";
