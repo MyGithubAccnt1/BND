@@ -12,6 +12,16 @@ export default function Home() {
     },
     {
       src: getAssetPath("hero2.jpg"),
+      alt: "IMMUMAX",
+      className: "w-full h-[85dvh] object-cover",
+    },
+    {
+      src: getAssetPath("hero3.png"),
+      alt: "BND",
+      className: "w-full h-[85dvh] object-cover",
+    },
+    {
+      src: getAssetPath("hero4.jpg"),
       alt: "BND",
       className: "w-full h-[85dvh] object-cover",
     },

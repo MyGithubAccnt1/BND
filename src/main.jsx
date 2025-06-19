@@ -27,8 +27,11 @@ const router = createBrowserRouter([
         element: <AboutBND/>
       },
       {
-        path: 'products',
-        element: <Products/>
+        children: [
+          {
+            
+          }
+        ]
       },
       {
         path: 'careers',
