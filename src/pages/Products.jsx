@@ -47,6 +47,8 @@ function Products() {
     product.category.toLowerCase().includes(ID.toLowerCase())
   );
 
+  const uniqueTypes = [...new Set(CategoryFilter.map(product => product.type))];
+
   let filteredProducts = CategoryFilter.filter(product => {
     if (search != '') {
       return (
@@ -68,6 +70,10 @@ function Products() {
     return () => clearTimeout(handler);
   }, [value]);
 
+  useEffect(() => {
+    return setSearch('');
+  }, [ID]);
+
   return (
     <div className='bg-gray-100 dark:bg-black py-5!'
       style={{
@@ -79,7 +85,7 @@ function Products() {
         `
       }}
     >
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 items-center min-h-[88dvh]">
+      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 items-center min-h-[88dvh] px-5! md:px-0!">
         <div 
           style={{
             padding: '15px 60px 15px 50px',
@@ -101,6 +107,28 @@ function Products() {
             onChange={e => setValue(e.target.value)}
             onInput={e => e.target.value == '' ? setSearch('') : null}
           />
+        </div>
+        <div 
+          className='flex items-center gap-5 rounded-full'
+        >
+          {uniqueTypes.map((type, index) => (
+            <button
+              key={index}
+              style={{
+                padding: '8px 50px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                boxShadow: '0 25px 45px rgba(0, 0, 0, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.5)',
+                borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(5px)'
+              }}
+              className='content-[""] rounded-full'
+              onClick={() => setSearch(type)}
+            >
+              {type}
+            </button>
+          ))}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {filteredProducts.length > 0 ? (
