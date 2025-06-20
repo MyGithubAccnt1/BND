@@ -124,7 +124,7 @@ function Products() {
                 backdropFilter: 'blur(5px)'
               }}
               className='content-[""] rounded-full'
-              onClick={() => setSearch(type)}
+              onClick={e => setSearch(e.target.value)}
             >
               {type}
             </button>
