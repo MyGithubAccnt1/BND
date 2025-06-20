@@ -117,7 +117,7 @@ export default function Home() {
           ref={refImg}
           src={getAssetPath("home1.jpg")}
           alt="home1.jpg"
-          className={`w-full md:w-[50%] transform transition-all duration-700 ease-out ${
+          className={`w-full md:w-[40%] transform transition-all duration-700 ease-out ${
             inViewImg ? "scale-100 opacity-100" : "scale-50 opacity-0"
           }`}
         />

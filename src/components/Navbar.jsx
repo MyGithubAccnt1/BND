@@ -74,7 +74,7 @@ export default function Navbar() {
                 to="/"
               >
                 <img
-                  src={getAssetPath("icon.png")}
+                  src={getAssetPath("/icon.png")}
                   alt="BND"
                   className="w-[85px] h-[85px]"
                 />
@@ -142,7 +142,7 @@ export default function Navbar() {
         </nav>
         <nav
           className={`
-            absolute h-[85dvh] text-gray-500 flex transition-all duration-500 w-full md:-left-100!
+            absolute h-[85dvh] text-gray-500 flex transition-all duration-500 w-full md:-left-100! md:pointer-events-none
             ${button ? "left-0" : "-left-100"}
           `}
         >
