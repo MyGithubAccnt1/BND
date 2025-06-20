@@ -110,7 +110,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setButton(!button)}
-              className="w-[35px] h-[35px] md:hidden"
+              className="w-[25px] h-[25px] md:hidden"
             >
               <div
                 className={`
@@ -120,19 +120,19 @@ export default function Navbar() {
               >
                 <span
                   className={`
-                    content-[''] h-[2px] w-[35px] bg-gray-500 transition-all
+                    content-[''] h-[2px] w-[25px] bg-gray-500 transition-all
                     ${button ? "rotate-45 duration-800" : "duration-1000"}
                   `}
                 ></span>
                 <span
                   className={`
-                    content-[''] h-[2px] w-[35px] bg-gray-500 mx-auto! my-2!
+                    content-[''] h-[2px] w-[25px] bg-gray-500 mx-auto! my-2!
                     ${button ? "hidden" : ""}
                   `}
                 ></span>
                 <span
                   className={`
-                    content-[''] h-[2px] w-[35px] bg-gray-500 transition-all
+                    content-[''] h-[2px] w-[25px] bg-gray-500 transition-all
                     ${button ? "-rotate-45 duration-300" : "duration-800"}
                   `}
                 ></span>

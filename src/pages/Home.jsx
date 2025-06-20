@@ -8,22 +8,22 @@ export default function Home() {
     {
       src: getAssetPath("hero1.jpg"),
       alt: "IMMUMAX",
-      className: "w-full h-[85dvh] object-cover",
+      className: "object-cover rounded-2xl h-[80dvh] w-full",
     },
     {
       src: getAssetPath("hero2.jpg"),
       alt: "IMMUMAX",
-      className: "w-full h-[85dvh] object-cover",
+      className: "object-cover rounded-2xl h-[80dvh] w-full",
     },
     {
       src: getAssetPath("hero3.png"),
       alt: "BND",
-      className: "w-full h-[85dvh] object-cover",
+      className: "object-cover rounded-2xl h-[80dvh] w-full",
     },
     {
       src: getAssetPath("hero4.jpg"),
       alt: "BND",
-      className: "w-full h-[85dvh] object-cover",
+      className: "object-cover rounded-2xl h-[80dvh] w-full",
     },
   ];
 
@@ -106,11 +106,14 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-5">
-      <img
-        src={background[currentIndex].src}
-        alt={background[currentIndex].alt}
-        className={background[currentIndex].className}
-      />
+      <div className="w-full h-[85dvh] px-[30px]!">
+        <img
+          src={background[currentIndex].src}
+          alt={background[currentIndex].alt}
+          className={background[currentIndex].className}
+        />
+      </div>
+      
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 md:flex-row md:gap-0">
         <img
