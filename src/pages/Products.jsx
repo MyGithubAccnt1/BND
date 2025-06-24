@@ -109,7 +109,7 @@ function Products() {
           />
         </div>
         <div 
-          className='flex items-center gap-5 rounded-full'
+          className='flex justify-center items-center overflow-auto w-full gap-5 rounded-full'
         >
           {uniqueTypes.map((type, index) => (
             <button
@@ -124,7 +124,7 @@ function Products() {
                 backdropFilter: 'blur(5px)'
               }}
               className='content-[""] rounded-full'
-              onClick={e => setSearch(e.target.value)}
+              onClick={() => setSearch(type)}
             >
               {type}
             </button>
@@ -144,7 +144,7 @@ function Products() {
                   borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
                   backdropFilter: 'blur(5px)'
                 }}
-                className='border border-gray-100 rounded-lg bg-[rgba(255,255,255,0.5)] flex flex-col gap-3 p-5!' key={index}
+                className='border border-gray-100 rounded-lg bg-[rgba(255,255,255,0.5)] flex flex-col gap-3 p-5! overflow-hidden' key={index}
               >
                 {
                   product.src ? (
@@ -157,7 +157,7 @@ function Products() {
                     </>
                   ) : (
                     <>
-                      <div className='relative overflow-hidden flex items-center justify-center h-[200px] w-[200px] mx-auto! bg-white'>
+                      <div className='relative flex items-center justify-center h-[200px] w-[200px] mx-auto! bg-white'>
                         <div className='absolute content-[""] w-[60px] h-[60px] rounded-full bg-red-500 flex items-center justify-center'>
                           <div className='absolute content-[""] w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center'>
                             <div className='content-[""] -rotate-45 h-[10px] w-full bg-red-500'></div>
