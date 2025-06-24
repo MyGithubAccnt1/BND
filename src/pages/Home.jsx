@@ -2,28 +2,116 @@ import { useState, useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
 import Slider from "react-infinite-logo-slider";
 import { getAssetPath } from "../utils/pathUtils";
+import { NavLink } from "react-router-dom";
+
+export function HeroWrapper({children}) {
+  return(
+    <div className="absolute top-0 left-0 w-full h-[85dvh] px-[30px]!">
+      <div className="content-[''] bg-gradient-to-r from-white from-0% via-white via-25% to-transparent to-100% rounded-2xl h-[80dvh] w-full">
+        <div className="w-full h-full lg:w-[40%] px-5! md:ps-[100px]! flex flex-col justify-center text-black">
+          {children}
+          <NavLink 
+            to="/contact" 
+            className="ms-auto text-center text-white font-bold bg-red-600 md:w-[50%] mt-2! py-2! px-3! hover:bg-red-500 hover:text-gray-100">
+            BE OUR DISTRIBUTOR
+          </NavLink>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export function Hero1() {
+  return(
+    <>
+      <span 
+        className="text-[#001AC6] font-bold text-2xl md:text-4xl"
+        style={{ fontFamily: "Russo One" }}
+      >BUILD YOUR</span>
+      <span 
+        className="text-[#D50057] font-bold text-2xl md:text-4xl"
+        style={{ fontFamily: "Russo One" }}
+      >OWN BRAND</span>
+      <span 
+        className="text-[#34AADC] font-bold text-2xl md:text-4xl"
+        style={{ fontFamily: "Russo One" }}
+      >WITH US!</span>
+      <ol>
+        <li className="text-md md:text-1xl font-bold">✔ Pharmaceutical Drugs</li>
+        <li className="text-md md:text-1xl font-bold">✔ OTC Medicines</li>
+        <li className="text-md md:text-1xl font-bold">✔ Food Supplements</li>
+        <li className="text-md md:text-1xl font-bold">✔ Medical Supplies</li>
+      </ol>
+    </>
+  )
+}
+
+export function Hero2() {
+  return(
+    <>
+      <span 
+        className="text-[#CE5C00] font-bold text-2xl md:text-4xl"
+        style={{ fontFamily: "Russo One" }}
+      >Keep a healthy immune system by taking</span>
+      <img src={getAssetPath("IMMUMAX.png")} className="md:w-[75%]" alt="IMMUMAX"/>
+      <ol>
+        <li className="text-md md:text-1xl font-bold">✔ Eliminates chronic and acute infections</li>
+        <li className="text-md md:text-1xl font-bold">✔ Reverse development of atherosclerosis</li>
+        <li className="text-md md:text-1xl font-bold">✔ Helps with the prevention of heart attack</li>
+      </ol>
+    </>
+  )
+}
+
+export function Hero3() {
+  return(
+    <>
+      <span 
+        className="text-[#3681E2] font-bold text-2xl md:text-4xl"
+        style={{ fontFamily: "Russo One" }}
+      >INTRODUCING OUR OWN PRODUCTS</span>
+      <span className="text-md md:text-1xl font-bold text-[#171F75]">WE OFFER WIDE RANGE OF ACCREDITED OTC MEDICINE AND MEDICAL SUPPLIES</span>
+    </>
+  )
+}
+
+export function Hero4() {
+  return(
+    <>
+      <span className="text-md md:text-1xl font-bold">BND Pharma and Medical Supplies Distribution Corp.</span>
+      <span 
+        className="text-[#3681E2] font-bold text-2xl md:text-4xl"
+        style={{ fontFamily: "Russo One" }}
+      >YOUR PARTNER IN TOTAL HEALTHCARE</span>
+    </>
+  )
+}
 
 export default function Home() {
   const background = [
     {
       src: getAssetPath("hero1.jpg"),
-      alt: "IMMUMAX",
+      alt: "BND",
       className: "object-cover rounded-2xl h-[80dvh] w-full",
+      child: <HeroWrapper><Hero1/></HeroWrapper>
     },
     {
       src: getAssetPath("hero2.jpg"),
       alt: "IMMUMAX",
       className: "object-cover rounded-2xl h-[80dvh] w-full",
+      child: <HeroWrapper><Hero2/></HeroWrapper>
     },
     {
       src: getAssetPath("hero3.png"),
       alt: "BND",
       className: "object-cover rounded-2xl h-[80dvh] w-full",
+      child: <HeroWrapper><Hero3/></HeroWrapper>
     },
     {
       src: getAssetPath("hero4.jpg"),
       alt: "BND",
       className: "object-cover rounded-2xl h-[80dvh] w-full",
+      child: <HeroWrapper><Hero4/></HeroWrapper>
     },
   ];
 
@@ -106,12 +194,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="w-full h-[85dvh] px-[30px]!">
+      <div className="w-full h-[85dvh] px-[30px]! relative">
         <img
           src={background[currentIndex].src}
           alt={background[currentIndex].alt}
           className={background[currentIndex].className}
         />
+        {background[currentIndex].child}
       </div>
       
 

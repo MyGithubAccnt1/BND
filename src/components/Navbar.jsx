@@ -72,6 +72,7 @@ export default function Navbar() {
             <div className="flex-shrink-0">
               <NavLink
                 to="/"
+                className="outline-none"
               >
                 <img
                   src={getAssetPath("/icon.png")}
