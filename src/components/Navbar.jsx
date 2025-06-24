@@ -52,6 +52,7 @@ const ProductsDropdown = () => {
 
 export default function Navbar() {
   const [button, setButton] = useState(false);
+  const [isToggle, setIsToggle] = useState(false);
   const mobileNav = (isActive) =>
     `ps-5! font-bold py-3! mx-[15px]! w-[calc(100%-30px)] border border-x-0 ${
       isActive
@@ -153,30 +154,70 @@ export default function Navbar() {
               ${button ? "[box-shadow:2px_-2px_3px_rgba(0,0,0,0.05)]" : ""}
             `}
           >
-            <NavLink to="/" className={({ isActive }) => mobileNav(isActive)}>
+            <NavLink 
+              to="/"
+              className={({ isActive }) => mobileNav(isActive)}
+              onClick={() => setButton()}
+            >
               Home
             </NavLink>
             <NavLink
               to="/about-bnd"
               className={({ isActive }) => mobileNav(isActive)}
+              onClick={() => setButton()}
             >
               About BND
             </NavLink>
-            <NavLink
-              to="/products"
-              className={({ isActive }) => mobileNav(isActive)}
+            <button
+              className={`text-start
+                ${mobileNav(false)}
+              `}
+              onClick={() => setIsToggle(!isToggle)}
             >
               Products
-            </NavLink>
+              <span className={`ms-1! inline-block transition-all duration-300
+                ${isToggle ? 'rotate-180' : 'rotate-90'}
+              `}
+              >&#9650;</span>
+            </button>
+            {
+              isToggle && (
+                <>
+                  <NavLink
+                    to="/products/pharmaceutical"
+                    className={({ isActive }) => mobileNav(isActive)}
+                    onClick={() => setButton()}
+                  >
+                    Pharmaceutical Drugs
+                  </NavLink>
+                  <NavLink
+                    to="/products/supplements"
+                    className={({ isActive }) => mobileNav(isActive)}
+                    onClick={() => setButton()}
+                  >
+                    Food Supplement
+                  </NavLink>
+                  <NavLink
+                    to="/products/devices"
+                    className={({ isActive }) => mobileNav(isActive)}
+                    onClick={() => setButton()}
+                  >
+                    Medical Devices
+                  </NavLink>
+                </>
+              )
+            }
             <NavLink
               to="/careers"
               className={({ isActive }) => mobileNav(isActive)}
+              onClick={() => setButton()}
             >
               Careers
             </NavLink>
             <NavLink
               to="/contact"
               className={({ isActive }) => mobileNav(isActive)}
+              onClick={() => setButton()}
             >
               Contact Us
             </NavLink>
