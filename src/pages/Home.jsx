@@ -178,19 +178,9 @@ export default function Home() {
     { src: getAssetPath("home5.png"), alt: "Pet Prime Logo" },
   ];
 
-  const style = {
-    backgroundImage: `
-      linear-gradient(158deg, rgba(84, 84, 84, 0.03) 0%, rgba(84, 84, 84, 0.03) 20%, rgba(219, 219, 219, 0.03) 20%, rgba(219, 219, 219, 0.03) 40%, rgba(54, 54, 54, 0.03) 40%, rgba(54, 54, 54, 0.03) 60%, rgba(99, 99, 99, 0.03) 60%, rgba(99, 99, 99, 0.03) 80%, rgba(92, 92, 92, 0.03) 80%, rgba(92, 92, 92, 0.03) 100%),
-      linear-gradient(45deg, rgba(221, 221, 221, 0.02) 0%, rgba(221, 221, 221, 0.02) 14.286%, rgba(8, 8, 8, 0.02) 14.286%, rgba(8, 8, 8, 0.02) 28.572%, rgba(52, 52, 52, 0.02) 28.572%, rgba(52, 52, 52, 0.02) 42.858%, rgba(234, 234, 234, 0.02) 42.858%, rgba(234, 234, 234, 0.02) 57.144%, rgba(81, 81, 81, 0.02) 57.144%, rgba(81, 81, 81, 0.02) 71.43%, rgba(239, 239, 239, 0.02) 71.43%, rgba(239, 239, 239, 0.02) 85.716%, rgba(187, 187, 187, 0.02) 85.716%, rgba(187, 187, 187, 0.02) 100.002%),
-      linear-gradient(109deg, rgba(33, 33, 33, 0.03) 0%, rgba(33, 33, 33, 0.03) 12.5%, rgba(147, 147, 147, 0.03) 12.5%, rgba(147, 147, 147, 0.03) 25%, rgba(131, 131, 131, 0.03) 25%, rgba(131, 131, 131, 0.03) 37.5%, rgba(151, 151, 151, 0.03) 37.5%, rgba(151, 151, 151, 0.03) 50%, rgba(211, 211, 211, 0.03) 50%, rgba(211, 211, 211, 0.03) 62.5%, rgba(39, 39, 39, 0.03) 62.5%, rgba(39, 39, 39, 0.03) 75%, rgba(55, 55, 55, 0.03) 75%, rgba(55, 55, 55, 0.03) 87.5%, rgba(82, 82, 82, 0.03) 87.5%, rgba(82, 82, 82, 0.03) 100%),
-      linear-gradient(348deg, rgba(42, 42, 42, 0.02) 0%, rgba(42, 42, 42, 0.02) 20%, rgba(8, 8, 8, 0.02) 20%, rgba(8, 8, 8, 0.02) 40%, rgba(242, 242, 242, 0.02) 40%, rgba(242, 242, 242, 0.02) 60%, rgba(42, 42, 42, 0.02) 60%, rgba(42, 42, 42, 0.02) 80%, rgba(80, 80, 80, 0.02) 80%, rgba(80, 80, 80, 0.02) 100%),
-      linear-gradient(120deg, rgba(106, 106, 106, 0.03) 0%, rgba(106, 106, 106, 0.03) 14.286%, rgba(67, 67, 67, 0.03) 14.286%, rgba(67, 67, 67, 0.03) 28.572%, rgba(134, 134, 134, 0.03) 28.572%, rgba(134, 134, 134, 0.03) 42.858%, rgba(19, 19, 19, 0.03) 42.858%, rgba(19, 19, 19, 0.03) 57.144%, rgba(101, 101, 101, 0.03) 57.144%, rgba(101, 101, 101, 0.03) 71.43%, rgba(205, 205, 205, 0.03) 71.43%, rgba(205, 205, 205, 0.03) 85.716%, rgba(53, 53, 53, 0.03) 85.716%, rgba(53, 53, 53, 0.03) 100.002%),
-      linear-gradient(45deg, rgba(214, 214, 214, 0.03) 0%, rgba(214, 214, 214, 0.03) 16.667%, rgba(255, 255, 255, 0.03) 16.667%, rgba(255, 255, 255, 0.03) 33.334%, rgba(250, 250, 250, 0.03) 33.334%, rgba(250, 250, 250, 0.03) 50.001%, rgba(231, 231, 231, 0.03) 50.001%, rgba(231, 231, 231, 0.03) 66.668%, rgba(241, 241, 241, 0.03) 66.668%, rgba(241, 241, 241, 0.03) 83.335%, rgba(31, 31, 31, 0.03) 83.335%, rgba(31, 31, 31, 0.03) 100.002%),
-      linear-gradient(59deg, rgba(224, 224, 224, 0.03) 0%, rgba(224, 224, 224, 0.03) 12.5%, rgba(97, 97, 97, 0.03) 12.5%, rgba(97, 97, 97, 0.03) 25%, rgba(143, 143, 143, 0.03) 25%, rgba(143, 143, 143, 0.03) 37.5%, rgba(110, 110, 110, 0.03) 37.5%, rgba(110, 110, 110, 0.03) 50%, rgba(34, 34, 34, 0.03) 50%, rgba(34, 34, 34, 0.03) 62.5%, rgba(155, 155, 155, 0.03) 62.5%, rgba(155, 155, 155, 0.03) 75%, rgba(249, 249, 249, 0.03) 75%, rgba(249, 249, 249, 0.03) 87.5%, rgba(179, 179, 179, 0.03) 87.5%, rgba(179, 179, 179, 0.03) 100%),
-      linear-gradient(241deg, rgba(58, 58, 58, 0.02) 0%, rgba(58, 58, 58, 0.02) 25%, rgba(124, 124, 124, 0.02) 25%, rgba(124, 124, 124, 0.02) 50%, rgba(254, 254, 254, 0.02) 50%, rgba(254, 254, 254, 0.02) 75%, rgba(52, 52, 52, 0.02) 75%, rgba(52, 52, 52, 0.02) 100%),
-      linear-gradient(90deg, #ffffff, #ffffff)
-    `
-  };
+  const contentWrapper = 'md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-[30px] mx-5! py-[50px]!';
+  const boxWrapper = 'p-[30px]! bg-white hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-shadow';
+  const boxTitle = 'text-black font-bold text-center text-3xl border border-x-0 border-[rgba(0,0,0,0.5)] mb-[40px]! w-[75%] mx-auto!';
 
   return (
     <div className="flex flex-col gap-5">
@@ -203,17 +193,18 @@ export default function Home() {
         {background[currentIndex].child}
       </div>
       
-
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 md:flex-row md:gap-0">
+      <div className="w-full md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 md:flex-row md:gap-0">
+        
         <img
           ref={refImg}
           src={getAssetPath("home1.jpg")}
           alt="home1.jpg"
-          className={`w-full md:w-[40%] transform transition-all duration-700 ease-out ${
+          className={`w-full md:w-[30%] transform transition-all duration-700 ease-out ${
             inViewImg ? "scale-100 opacity-100" : "scale-50 opacity-0"
           }`}
         />
-        <div className="flex flex-col gap-5 px-5!">
+        <div className="flex flex-col gap-5 px-5! ps-10! relative">
+          <div className="absolute left-5 content-[''] w-1 rounded-full h-full bg-gray-300 dark:bg-white"></div>
           <h1
             className="text-[#6EC1E4] font-bold text-2xl"
             style={{ fontFamily: "Changa" }}
@@ -221,9 +212,10 @@ export default function Home() {
             Brief Introduction
           </h1>
           <p
-            className="text-justify text-[#7A7A7A]"
+            className="text-justify text-[#7A7A7A] relative"
             style={{ fontFamily: "Karla" }}
           >
+            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-gray-300 dark:bg-white rounded-full"></span>
             A tripartite of well-known companies in pharmaceutical and
             veterinary industries in the Philippines, AMB-HK Group of Companies
             is engaged in the distribution of high quality medicines, medical
@@ -231,9 +223,10 @@ export default function Home() {
             providing excellent products nationwide.
           </p>
           <p
-            className="text-justify text-[#7A7A7A]"
+            className="text-justify text-[#7A7A7A] relative"
             style={{ fontFamily: "Karla" }}
           >
+            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-gray-300 dark:bg-white rounded-full"></span>
             With the strong network of manufacturer tie-ups from China, India
             and Europe, the company is established to cater to the increasing
             demands of high quality yet price-competitive pharmaceutical and
@@ -243,7 +236,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
+      <div className="bg-gradient-to-b from-white to-gray-200 dark:bg-gradient-to-t dark:from-black dark:to-neutral-800 py-[50px]!">
         <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! mb-[30px]!">
           <h1
             className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
@@ -271,136 +264,146 @@ export default function Home() {
         </Slider>
       </div>
 
-      <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-[30px] mx-5! py-[50px]!">
-        <h1
-          className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
-          style={{ fontFamily: "Changa" }}
-        >
-          Overview of AMB's Success
-        </h1>
-        <div className="flex flex-col md:flex-row gap-4 mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              TOP <span ref={c1.ref}>{c1.count}</span>
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              Pharmaceutical Importer in Philippines (in terms of Sales)
-            </p>
+      <div 
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%),
+            linear-gradient(90deg, rgb(246,250,251), rgb(246,250,251))
+          `,
+          backgroundSize: '16px 16px'
+        }}
+        className="py-[50px]!">
+        <div className={ contentWrapper }>
+          <h1
+            className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
+            style={{ fontFamily: "Changa" }}
+          >
+            Overview of AMB's Success
+          </h1>
+          <div className="flex flex-col md:flex-row gap-4 md:mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                TOP <span ref={c1.ref}>{c1.count}</span>
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                Pharmaceutical Importer in Philippines (in terms of Sales)
+              </p>
+            </div>
+
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                TOP <span ref={c2.ref}>{c2.count}</span>
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                Pharmaceutical Importer in Philippines (in terms of Volume)
+              </p>
+            </div>
+
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={c3.ref}>{c3.count}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                GMP registered for foreign manufacturer
+              </p>
+            </div>
+
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={c4.ref}>{c4.count}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                Partner distributors
+              </p>
+            </div>
           </div>
 
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              TOP <span ref={c2.ref}>{c2.count}</span>
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              Pharmaceutical Importer in Philippines (in terms of Volume)
-            </p>
-          </div>
-
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              <span ref={c3.ref}>{c3.count}</span>+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              GMP registered for foreign manufacturer
-            </p>
-          </div>
-
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              <span ref={c4.ref}>{c4.count}</span>+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              Partner distributors
-            </p>
-          </div>
-        </div>
-
-        <div className="relative flex justify-center items-center mx-5!">
-          <span className='content-[""] bg-[#7A7A7A] h-[1px] w-full'></span>
-          <span className='absolute content-[""] bg-white dark:bg-transparent w-[40px] flex justify-center items-center'>
-            <span className='content-[""] bg-black dark:bg-white rounded-full w-[20px] h-[20px] flex justify-center items-center'>
-              <span className='content-[""] bg-white dark:bg-black rounded-full w-[7px] h-[7px]'></span>
+          <div className="relative flex justify-center items-center mx-5!">
+            <span className='content-[""] bg-[#7A7A7A] h-[1px] w-full'></span>
+            <span className='absolute content-[""] bg-[rgb(246,250,251)] w-[40px] flex justify-center items-center'>
+              <span className='content-[""] bg-black rounded-full w-[20px] h-[20px] flex justify-center items-center'>
+                <span className='content-[""] bg-white rounded-full w-[7px] h-[7px]'></span>
+              </span>
             </span>
-          </span>
-        </div>
-
-        <div className="flex flex-col md:flex-row gap-4 mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              <span ref={c5.ref}>{c5.count}</span>+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              BND Employees
-            </p>
           </div>
 
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              <span ref={c6.ref}>{c6.count}</span>+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              CPRs (Drugs Registered)
-            </p>
-          </div>
+          <div className="flex flex-col md:flex-row gap-4 md:mx-5! md:justify-center lg:mx-0! flex-wrap lg:flex-nowrap">
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={c5.ref}>{c5.count}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                BND Employees
+              </p>
+            </div>
 
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              <span ref={c7.ref}>{c7.count}</span>+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              CPRs (Medical Devices Registered)
-            </p>
-          </div>
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={c6.ref}>{c6.count}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                CPRs (Drugs Registered)
+              </p>
+            </div>
 
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              <span ref={c8.ref}>{c8.count}</span>+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              CPRs (Food Supplements Registered)
-            </p>
-          </div>
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={c7.ref}>{c7.count}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                CPRs (Medical Devices Registered)
+              </p>
+            </div>
 
-          <div style={ style } className="border border-3 text-[#6EC1E4] rounded-2xl p-5! dark:bg-none! dark:bg-[#2C2C2C]">
-            <h1
-              className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
-              style={{ fontFamily: "Changa" }}
-            >
-              <span ref={c9.ref}>{c9.count}</span>+
-            </h1>
-            <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
-              CPRs (Cosmetics Registered)
-            </p>
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={c8.ref}>{c8.count}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                CPRs (Food Supplements Registered)
+              </p>
+            </div>
+
+            <div className={ boxWrapper }>
+              <h1
+                className={ boxTitle }
+                style={{ fontFamily: "Changa" }}
+              >
+                <span ref={c9.ref}>{c9.count}</span>+
+              </h1>
+              <p className="text-[#7A7A7A]" style={{ fontFamily: "Karla" }}>
+                CPRs (Cosmetics Registered)
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
+      <div className="bg-gradient-to-b from-white to-gray-200 dark:bg-gradient-to-t dark:from-black dark:to-neutral-800 py-[50px]!">
         <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col items-center gap-5 md:flex-row md:gap-0 px-5! md:px-0!">
           <h1
             className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
@@ -464,7 +467,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]! flex flex-col gap-y-5">
+      <div className="bg-gradient-to-b from-white to-gray-200 dark:bg-gradient-to-b dark:from-black dark:to-neutral-800 py-[50px]! flex flex-col gap-y-5">
         <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
           <h1
             className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
@@ -1292,8 +1295,16 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#E0E0E0] dark:bg-[#2C2C2C] py-[50px]!">
-        <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! flex flex-col gap-5 px-5! md:px-0!">
+      <div 
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%),
+            linear-gradient(90deg, rgb(246,250,251), rgb(246,250,251))
+          `,
+          backgroundSize: '16px 16px'
+        }}
+        className="py-[50px]!">
+        <div className={ contentWrapper }>
           <h1
             className="text-[#6EC1E4] font-bold text-center text-3xl md:text-4xl lg:text-5xl"
             style={{ fontFamily: "Changa" }}
@@ -1301,9 +1312,9 @@ export default function Home() {
             Why work with BND?
           </h1>
           <div className="flex flex-col md:flex-row gap-4 flex-wrap md:justify-center lg:flex-nowrap">
-            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+            <div className={ boxWrapper }>
               <h1
-                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                className={ boxTitle }
                 style={{ fontFamily: "Changa" }}
               >
                 <span ref={c10.ref}>{c10.count}</span>YRS
@@ -1314,9 +1325,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+            <div className={ boxWrapper }>
               <h1
-                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                className={ boxTitle }
                 style={{ fontFamily: "Changa" }}
               >
                 <span ref={c11.ref}>{c11.count}</span>+
@@ -1327,9 +1338,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+            <div className={ boxWrapper }>
               <h1
-                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                className={ boxTitle }
                 style={{ fontFamily: "Changa" }}
               >
                 <span ref={c12.ref}>{c12.count}</span>+
@@ -1339,9 +1350,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="border border-3 text-[#6EC1E4] rounded-2xl p-5! bg-[#FFFFFF] dark:bg-[#0D0D0D]">
+            <div className={ boxWrapper }>
               <h1
-                className="text-[#6EC1E4] font-bold text-center text-4xl border border-x-0 mb-2! w-[75%] mx-auto!"
+                className={ boxTitle }
                 style={{ fontFamily: "Changa" }}
               >
                 <span ref={c13.ref}>{c13.count}</span>%
