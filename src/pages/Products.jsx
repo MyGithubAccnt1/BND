@@ -75,16 +75,20 @@ function Products() {
   }, [ID]);
 
   return (
-    <div className='bg-gray-100 dark:bg-black py-5!'
-      style={{
-        backgroundImage: `
-          repeating-linear-gradient(90deg, hsla(178,0%,66%,0.05) 0px, hsla(178,0%,66%,0.05) 1px, transparent 1px, transparent 104px),
-          repeating-linear-gradient(0deg, hsla(178,0%,66%,0.05) 0px, hsla(178,0%,66%,0.05) 1px, transparent 1px, transparent 104px),
-          repeating-linear-gradient(0deg, hsla(178,0%,66%,0.07) 0px, hsla(178,0%,66%,0.07) 1px, transparent 1px, transparent 26px),
-          repeating-linear-gradient(90deg, hsla(178,0%,66%,0.07) 0px, hsla(178,0%,66%,0.07) 1px, transparent 1px, transparent 26px)
-        `
-      }}
+    <div className='bg-[rgb(246,250,251)] dark:bg-gradient-to-r dark:from-[#2B1D49] dark:via-black dark:to-[#193043] py-5! relative'
+      
     >
+      <div
+        className='absolute top-0 left-0 content-[""] w-full h-full'
+        style={{
+          backgroundImage: `
+            repeating-linear-gradient(90deg, hsla(178,0%,66%,0.05) 0px, hsla(178,0%,66%,0.05) 1px, transparent 1px, transparent 104px),
+            repeating-linear-gradient(0deg, hsla(178,0%,66%,0.05) 0px, hsla(178,0%,66%,0.05) 1px, transparent 1px, transparent 104px),
+            repeating-linear-gradient(0deg, hsla(178,0%,66%,0.07) 0px, hsla(178,0%,66%,0.07) 1px, transparent 1px, transparent 26px),
+            repeating-linear-gradient(90deg, hsla(178,0%,66%,0.07) 0px, hsla(178,0%,66%,0.07) 1px, transparent 1px, transparent 26px)
+          `
+        }}
+      ></div>
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 items-center min-h-[88dvh] px-5! md:px-0!">
         <div 
           style={{
@@ -117,13 +121,13 @@ function Products() {
               style={{
                 padding: '8px 50px',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 25px 45px rgba(0, 0, 0, 0.1)',
+                boxShadow: '0 15px 25px rgba(0, 0, 0, 0.1)',
                 border: '1px solid rgba(255, 255, 255, 0.5)',
                 borderRight: '1px solid rgba(255, 255, 255, 0.2)',
                 borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
                 backdropFilter: 'blur(5px)'
               }}
-              className='content-[""] rounded-full'
+              className='content-[""] rounded-full mb-5!'
               onClick={() => setSearch(type)}
             >
               {type}
@@ -137,7 +141,7 @@ function Products() {
                 style={{
                   padding: '50px 35px',
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  boxShadow: '0 25px 45px rgba(0, 0, 0, 0.1)',
+                  boxShadow: '0 15px 25px rgba(0, 0, 0, 0.1)',
                   border: '1px solid rgba(255, 255, 255, 0.5)',
                   borderRadius: '5px',
                   borderRight: '1px solid rgba(255, 255, 255, 0.2)',
@@ -148,16 +152,16 @@ function Products() {
               >
                 {
                   product.src ? (
-                    <>
+                    <div className='max-h-[200px] max-w-[200px] bg-white mx-auto! overflow-hidden rounded'>
                       <img
                         src={product.src}
                         alt='Image' 
-                        className='object-contain h-[200px] w-[200px] mx-auto! bg-white'
+                        className='object-contain h-[200px] w-[200px] hover:scale-[111%] transition-all duration-300'
                       />
-                    </>
+                    </div>
                   ) : (
-                    <>
-                      <div className='relative flex items-center justify-center h-[200px] w-[200px] mx-auto! bg-white'>
+                    <div className='max-h-[200px] max-w-[200px] bg-white mx-auto! overflow-hidden rounded'>
+                      <div className='relative flex items-center justify-center h-[200px] w-[200px] bg-white hover:scale-[111%] transition-all duration-300'>
                         <div className='absolute content-[""] w-[60px] h-[60px] rounded-full bg-red-500 flex items-center justify-center'>
                           <div className='absolute content-[""] w-[40px] h-[40px] rounded-full bg-white flex items-center justify-center'>
                             <div className='content-[""] -rotate-45 h-[10px] w-full bg-red-500'></div>
@@ -168,7 +172,7 @@ function Products() {
                           style={{ fontFamily: "Changa" }}
                         >NO IMAGE AVAILABLE</span>
                       </div>
-                    </>
+                    </div>
                   )
                 }
                 <span 

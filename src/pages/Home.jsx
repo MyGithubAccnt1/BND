@@ -204,7 +204,7 @@ export default function Home() {
           }`}
         />
         <div className="flex flex-col gap-5 px-5! ps-10! relative">
-          <div className="absolute left-5 content-[''] w-1 rounded-full h-full bg-gray-300 dark:bg-white"></div>
+          <div className="absolute left-5 content-[''] w-1 rounded-full h-full bg-[#7A7A7A]"></div>
           <h1
             className="text-[#6EC1E4] font-bold text-2xl"
             style={{ fontFamily: "Changa" }}
@@ -215,7 +215,7 @@ export default function Home() {
             className="text-justify text-[#7A7A7A] relative"
             style={{ fontFamily: "Karla" }}
           >
-            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-gray-300 dark:bg-white rounded-full"></span>
+            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-[#7A7A7A] rounded-full"></span>
             A tripartite of well-known companies in pharmaceutical and
             veterinary industries in the Philippines, AMB-HK Group of Companies
             is engaged in the distribution of high quality medicines, medical
@@ -226,7 +226,7 @@ export default function Home() {
             className="text-justify text-[#7A7A7A] relative"
             style={{ fontFamily: "Karla" }}
           >
-            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-gray-300 dark:bg-white rounded-full"></span>
+            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-[#7A7A7A] rounded-full"></span>
             With the strong network of manufacturer tie-ups from China, India
             and Europe, the company is established to cater to the increasing
             demands of high quality yet price-competitive pharmaceutical and
@@ -236,16 +236,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-white to-gray-200 dark:bg-gradient-to-t dark:from-black dark:to-neutral-800 py-[50px]!">
-        <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! mb-[30px]!">
-          <h1
-            className="text-[#6EC1E4] font-bold text-center text-3xl md:text-5xl"
-            style={{ fontFamily: "Changa" }}
-          >
-            BND Group of Companies
-          </h1>
-        </div>
-
+      <div 
+        style={{
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+        }}
+        className="bg-gradient-to-b from-gray-200 via-white to-gray-200 dark:bg-gradient-to-b dark:from-[#0D0D0D] dark:via-neutral-900 dark:to-[#0D0D0D] py-[50px]!">
         <Slider
           duration={20}
           pauseOnHover={true}
@@ -255,7 +253,7 @@ export default function Home() {
           {groupOfCompanies.map((company, index) => (
             <Slider.Slide key={index}>
               <img
-                className="max-h-[150px] max-w-[200px] mx-auto!"
+                className="max-h-[100px] max-w-[200px] mx-auto"
                 src={company.src}
                 alt={company.alt}
               />
@@ -403,7 +401,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-white to-gray-200 dark:bg-gradient-to-t dark:from-black dark:to-neutral-800 py-[50px]!">
+      <div className="bg-gradient-to-b from-gray-200 via-white to-gray-200 dark:bg-gradient-to-b dark:from-[#0D0D0D] dark:via-neutral-900 dark:to-[#0D0D0D] py-[50px]!">
         <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col items-center gap-5 md:flex-row md:gap-0 px-5! md:px-0!">
           <h1
             className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
@@ -467,7 +465,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-white to-gray-200 dark:bg-gradient-to-b dark:from-black dark:to-neutral-800 py-[50px]! flex flex-col gap-y-5">
+      <div className="bg-gradient-to-b from-gray-200 via-white to-gray-200 dark:bg-gradient-to-b dark:from-[#0D0D0D] dark:via-neutral-900 dark:to-[#0D0D0D] py-[50px]! flex flex-col gap-y-5">
         <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 px-5! md:px-0!">
           <h1
             className="text-[#6EC1E4] font-bold text-3xl md:text-4xl lg:text-5xl"
