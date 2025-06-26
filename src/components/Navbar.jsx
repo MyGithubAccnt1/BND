@@ -26,8 +26,7 @@ const ProductsDropdown = () => {
       {isOpen && (
         <>
           <div className="absolute top-[100%] w-full pt-2!">
-            <div className="absolute left-[25%] content-[''] w-[25px] h-[25px] bg-gray-300 dark:bg-gray-800 rotate-45"></div>
-            <div className="absolute left-0 mt-1! bg-gray-300 dark:bg-gray-800 py-2! rounded-md shadow-lg min-w-[200px] z-50">
+            <div className="absolute left-0 mt-1! bg-gray-100 dark:bg-gray-800 py-2! rounded-md shadow-lg min-w-[200px] z-50">
               {products.map((item) => (
                 <NavLink
                   key={item.path}
