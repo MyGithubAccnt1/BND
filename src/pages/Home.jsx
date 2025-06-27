@@ -204,7 +204,9 @@ export default function Home() {
           }`}
         />
         <div className="flex flex-col gap-5 px-5! ps-10! relative">
-          <div className="absolute left-5 content-[''] w-1 rounded-full h-full bg-[#7A7A7A]"></div>
+          <div className="absolute content-[''] left-5 top-0 w-0.75 h-full bg-[#6EC1E4]"></div>
+          <div className="absolute content-[''] left-2.5 top-0 w-5 h-10 bg-gradient-to-b from-white dark:from-[#0D0D0D] to-transparent"></div>
+          <div className="absolute content-[''] left-2.5 bottom-0 w-5 h-10 bg-gradient-to-t from-white dark:from-[#0D0D0D] to-transparent"></div>
           <h1
             className="text-[#6EC1E4] font-bold text-2xl"
             style={{ fontFamily: "Changa" }}
@@ -215,7 +217,13 @@ export default function Home() {
             className="text-justify text-[#7A7A7A] relative"
             style={{ fontFamily: "Karla" }}
           >
-            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-[#7A7A7A] rounded-full"></span>
+            <div className="absolute top-0 -left-7.5 content-[''] bg-white dark:bg-[#0D0D0D] w-6 h-6 rounded-full flex items-center justify-center">
+              <div className="content-[''] bg-[#6EC1E4] w-4 h-4 rounded-full flex items-center justify-center">
+                <div className="content-[''] bg-white dark:bg-[#0D0D0D] w-3 h-3 rounded-full flex items-center justify-center">
+                  <div className="content-[''] bg-[#6EC1E4] w-2 h-2 rounded-full"></div>
+                </div>
+              </div>
+            </div>
             A tripartite of well-known companies in pharmaceutical and
             veterinary industries in the Philippines, AMB-HK Group of Companies
             is engaged in the distribution of high quality medicines, medical
@@ -226,7 +234,13 @@ export default function Home() {
             className="text-justify text-[#7A7A7A] relative"
             style={{ fontFamily: "Karla" }}
           >
-            <span className="absolute content-[''] w-4 h-4 -left-6.5 bg-[#7A7A7A] rounded-full"></span>
+            <div className="absolute top-0 -left-7.5 content-[''] bg-white dark:bg-[#0D0D0D] w-6 h-6 rounded-full flex items-center justify-center">
+              <div className="content-[''] bg-[#6EC1E4] w-4 h-4 rounded-full flex items-center justify-center">
+                <div className="content-[''] bg-white dark:bg-[#0D0D0D] w-3 h-3 rounded-full flex items-center justify-center">
+                  <div className="content-[''] bg-[#6EC1E4] w-2 h-2 rounded-full"></div>
+                </div>
+              </div>
+            </div>
             With the strong network of manufacturer tie-ups from China, India
             and Europe, the company is established to cater to the increasing
             demands of high quality yet price-competitive pharmaceutical and
