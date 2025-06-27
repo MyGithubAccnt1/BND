@@ -179,9 +179,20 @@ export default function Home() {
   ];
 
   const contentWrapper = 'md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-[30px] mx-5! py-[50px]!';
-  const boxWrapper = 'p-[30px]! bg-white hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] transition-shadow';
+  const boxWrapper = 'p-[30px]! bg-white hover:shadow-[0_0_20px_rgb(110,193,228)] dark:hover:shadow-[0_0_20px_rgb(255,255,255)] transition-shadow';
   const boxTitle = 'text-black font-bold text-center text-3xl border border-x-0 border-[rgba(0,0,0,0.5)] mb-[40px]! w-[75%] mx-auto!';
 
+  const [DarkMode, setDarkMode] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => setDarkMode(e.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+  
   return (
     <div className="flex flex-col gap-5">
       <div className="w-full h-[85dvh] px-[30px]! relative">
@@ -279,8 +290,9 @@ export default function Home() {
       <div 
         style={{
           backgroundImage: `
-            radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%),
-            linear-gradient(90deg, rgb(246,250,251), rgb(246,250,251))
+            ${ DarkMode 
+              ? 'radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%)'
+              : 'radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%), linear-gradient(90deg, rgb(246,250,251), rgb(246,250,251))' }
           `,
           backgroundSize: '16px 16px'
         }}
@@ -344,9 +356,9 @@ export default function Home() {
 
           <div className="relative flex justify-center items-center mx-5!">
             <span className='content-[""] bg-[#7A7A7A] h-[1px] w-full'></span>
-            <span className='absolute content-[""] bg-[rgb(246,250,251)] w-[40px] flex justify-center items-center'>
-              <span className='content-[""] bg-black rounded-full w-[20px] h-[20px] flex justify-center items-center'>
-                <span className='content-[""] bg-white rounded-full w-[7px] h-[7px]'></span>
+            <span className='absolute content-[""] bg-[rgb(246,250,251)] dark:bg-[#0D0D0D] w-[40px] flex justify-center items-center'>
+              <span className='content-[""] bg-black dark:bg-white rounded-full w-[20px] h-[20px] flex justify-center items-center'>
+                <span className='content-[""] bg-white dark:bg-[#0D0D0D] rounded-full w-[7px] h-[7px]'></span>
               </span>
             </span>
           </div>
@@ -1310,8 +1322,9 @@ export default function Home() {
       <div 
         style={{
           backgroundImage: `
-            radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%),
-            linear-gradient(90deg, rgb(246,250,251), rgb(246,250,251))
+            ${ DarkMode 
+              ? 'radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%)'
+              : 'radial-gradient(circle at center center, rgba(49, 132, 215, 0.4) 0%, rgba(49, 132, 215, 0.4) 7%, transparent 7%, transparent 100%), linear-gradient(90deg, rgb(246,250,251), rgb(246,250,251))' }
           `,
           backgroundSize: '16px 16px'
         }}
