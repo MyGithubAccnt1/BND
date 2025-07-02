@@ -3,44 +3,153 @@ import { useState, useEffect } from 'react';
 
 function Products() {
   const { ID } = useParams();
+  const glassmorphism = {
+    padding: '15px 60px 10px 60px',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    boxShadow: '0 25px 45px rgba(0, 0, 0, 0.1)',
+    border: '1px solid rgba(255, 255, 255, 0.5)',
+    borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
+    backdropFilter: 'blur(5px)'
+  }
   const [value, setValue] = useState('');
   const [search, setSearch] = useState('');
 
   const products = [
-    { name: 'Acarbose', description: '500mg Tablet', src:'https://5.imimg.com/data5/SELLER/Default/2022/11/GK/FX/VI/160457072/acarbose-50-mg-1000x1000.png', category: 'pharmaceutical', type: 'Tablet' },
-    { name: 'Amino acids + Sorbitol', description: 'Solution for Infusion (IV)', src:'https://www.siamclinicphuket.com/wp-content/uploads/2023/07/kidmin2-724x1024.png', category: 'pharmaceutical', type: 'Solution' },
-    { name: 'Amikacin (as sulfate)', description: '250mg/mL (500mg/mL) SFI (IM/IV)', src:'https://th.bing.com/th/id/R.cb116fe01417a9a49614195d5b1f30cc?rik=1nGM1cI2u1PF9g&riu=http%3a%2f%2favenciaworld.com%2fwp-content%2fuploads%2f2017%2f05%2f2016_Product_V_Amikacin-500-mg-per-2-mL-_front-ADJ-3.png&ehk=5EWJTAv71vrYMXC7PG3u7cRhaG6bvXPGIwHoO3njLRQ%3d&risl=&pid=ImgRaw&r=0', category: 'pharmaceutical', type: 'Solution' },
-    { name: 'Amlodipine besilate', description: '5mg Tablet', src:'https://www.sidomuncul.co.id/assets/images/product/Berlico/Prescription-Ethical/Amlodipine.png', category: 'pharmaceutical', type: 'Tablet' },
-    
-    { name: 'Amlodipine besilate', description: '10mg Tablet', src:'https://imfarmindfarmasi.com/wp-content/uploads/2020/02/amlodipine_kaplet_10_mg_allufoil_strip-1024x768.png', category: 'pharmaceutical', type: 'Tablet' },
-    { name: 'Amoxicillin trihydrate', description: '500mg Capsule', src:'', category: 'pharmaceutical', type: 'Capsule' },
-    { name: 'Ampicillin sodium', description: '1g PFI (IM/IV)', src:'', category: 'pharmaceutical', type: 'Injection' },
-    { name: 'Ampicillin sodium', description: '500mg PFI (IM/IV)', src:'', category: 'pharmaceutical', type: 'Injection' },
+    {
+      name: 'Acarbose',
+      description: '500mg',
+      src:'https://5.imimg.com/data5/SELLER/Default/2022/11/GK/FX/VI/160457072/acarbose-50-mg-1000x1000.png',
+      category: 'pharmaceutical',
+      type: 'Tablet' },
+    { name: 'Amino acids + Sorbitol',
+      description: 'Infusion (IV)',
+      src:'https://www.siamclinicphuket.com/wp-content/uploads/2023/07/kidmin2-724x1024.png',
+      category: 'pharmaceutical',
+      type: 'Solution' },
+    { name: 'Amikacin', 
+      description: 'SFI (IM/IV)', 
+      src:'https://th.bing.com/th/id/R.cb116fe01417a9a49614195d5b1f30cc?rik=1nGM1cI2u1PF9g&riu=http%3a%2f%2favenciaworld.com%2fwp-content%2fuploads%2f2017%2f05%2f2016_Product_V_Amikacin-500-mg-per-2-mL-_front-ADJ-3.png&ehk=5EWJTAv71vrYMXC7PG3u7cRhaG6bvXPGIwHoO3njLRQ%3d&risl=&pid=ImgRaw&r=0', 
+      category: 'pharmaceutical', 
+      type: 'Solution' },
+    { name: 'Amlodipine besilate', 
+      description: '5mg', 
+      src:'https://www.sidomuncul.co.id/assets/images/product/Berlico/Prescription-Ethical/Amlodipine.png', 
+      category: 'pharmaceutical', 
+      type: 'Tablet' },
+    { name: 'Amlodipine besilate', 
+      description: '10mg', 
+      src:'https://imfarmindfarmasi.com/wp-content/uploads/2020/02/amlodipine_kaplet_10_mg_allufoil_strip-1024x768.png', 
+      category: 'pharmaceutical', 
+      type: 'Tablet' },
+    { name: 'Amoxicillin trihydrate', 
+      description: '500mg', 
+      src:'', 
+      category: 'pharmaceutical', 
+      type: 'Capsule' },
+    { name: 'Ampicillin sodium', 
+      description: '1g PFI (IM/IV)', 
+      src:'', 
+      category: 'pharmaceutical', 
+      type: 'Injection' },
+    { name: 'Ampicillin sodium', 
+      description: '500mg PFI (IM/IV)', 
+      src:'', 
+      category: 'pharmaceutical', 
+      type: 'Injection' },
 
-    { name: '3 SN Phosphatidyl Choline + B Vitamins', description: 'Dietary Supplement Softgel Capsule', src: '', category: 'supplements', type: 'Softgel Capsule' },
-    { name: 'Alpha-Lipoic Acid, Gamma Linoleic Acid, Lutein and Zeaxanthin with B-Vitamins', description: 'Food Supplement Softgel Capsule', src: '', category: 'supplements', type: 'Softgel Capsule' },
-    { name: 'Alpha Lipoic Acid (ALA)', description: '600mg Food Supplement Capsule', src: '', category: 'supplements', type: 'Capsule' },
-    { name: 'Amino Acids', description: '600mg Dietary Supplement Softgel Capsule', src: '', category: 'supplements', type: 'Softgel Capsule' },
+
+    { name: 'Phosphatidyl Choline + B Vitamins', 
+      description: 'Softgel Capsule', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Dietary Supplement' },
+    { name: 'Alatein', 
+      description: 'Alpha-Lipoic Acid, Gamma Linoleic Acid, Lutein and Zeaxanthin with B-Vitamins', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Food Supplement' },
+    { name: 'Alpha Lipoic Acid (ALA)', 
+      description: 'Capsule', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Food Supplement' },
+    { name: 'Amino Acids', 
+      description: 'Softgel Capsule', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Dietary Supplement' },
+    { name: 'Amino Acids with B-Vitamins', 
+      description: 'Softgel Capsule', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Food Supplement' },
+    { name: 'Amino Acids with B-Vitamins', 
+      description: 'Softgel Capsule', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Dietary Supplement' },
+    { name: 'Ampalaya', 
+      description: 'Capsule', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Food Supplement' },
+    { name: 'Ashitaba (Angelica keiske Koidzumi)', 
+      description: 'Capsule', 
+      src: '', 
+      category: 'supplements', 
+      type: 'Dietary Supplement' },
     
-    { name: 'Amino Acids with B-Vitamins', description: '800mg Food Supplement Softgel Capsule', src: '', category: 'supplements', type: 'Softgel Capsule' },
-    { name: 'Amino Acids with B-Vitamins', description: 'Dietary Supplement Softgel Capsule', src: '', category: 'supplements', type: 'Softgel Capsule' },
-    { name: 'Ampalaya', description: '600mg Food Supplement Capsule', src: '', category: 'supplements', type: 'Capsule' },
-    { name: 'Ashitaba (Angelica keiske Koidzumi)', description: 'Dietary Supplement Capsule 500mg', src: '', category: 'supplements', type: 'Capsule' },
-    
-    { name: 'Air Compressing Nebulizer', description: 'Machine Only', src: '', category: 'devices', type: 'digital-equipments' },
-    { name: 'Aneroid Sphygmomanometer', description: '', src: '', category: 'devices', type: 'digital-equipments' },
-    { name: 'Digital Blood Pressure Monitor', description: '', src: '', category: 'devices', type: 'digital-equipments' },
-    { name: 'Digital Blood Pressure Monitor (Arm Style)', description: '', src: '', category: 'devices', type: 'digital-equipments' },
+
+    { name: 'Air Compressing Nebulizer', 
+      description: 'Combination of a nebulizer and air compressor', 
+      src: '', 
+      category: 'devices', 
+      type: 'digital-equipments' },
+    { name: 'Aneroid Sphygmomanometer', 
+      description: 'Manual device used to measure blood pressure', 
+      src: '', 
+      category: 'devices', 
+      type: 'digital-equipments' },
+    { name: 'Digital Blood Pressure Monitor', 
+      description: 'Used to measure blood pressure, composed of an inflatable cuff to collapse and then release the artery under the cuff in a controlled manner', 
+      src: '', 
+      category: 'devices', 
+      type: 'digital-equipments' },
   
-    { name: 'Absorbent Cotton Balls', description: '0.2 to 5g', src: '', category: 'devices', type: 'disposable-supplies' },
-    { name: 'Absorbent Cotton Balls', description: '', src: '', category: 'devices', type: 'disposable-supplies' },
-    { name: 'Adult Diaper Regular', description: '', src: '', category: 'devices', type: 'disposable-supplies' },
-    { name: 'Adult Diaper Premium Pull-Ups', description: '', src: '', category: 'devices', type: 'disposable-supplies' },
 
-    { name: 'Arm Crutch', description: '', src: '', category: 'devices', type: 'mobility-aid' },
-    { name: 'Cane', description: '', src: '', category: 'devices', type: 'mobility-aid' },
-    { name: 'Cane with Chair', description: '', src: '', category: 'devices', type: 'mobility-aid' },
-    { name: 'Commode Chair', description: '', src: '', category: 'devices', type: 'mobility-aid' },
+    { name: 'Absorbent Cotton Balls', 
+      description: 'Used to remove cosmetics or to cushion fragile objects', 
+      src: '', 
+      category: 'devices', 
+      type: 'disposable-supplies' },
+    { name: 'Adult Diaper Regular', 
+      description: 'Diaper made to be worn by a person with a body larger than that of an infant or toddler', 
+      src: '', 
+      category: 'devices', 
+      type: 'disposable-supplies' },
+    { name: 'Adult Diaper Premium Pull-Ups', 
+      description: 'Unique incontinence briefs designed to mimic regular underwear', 
+      src: '', 
+      category: 'devices', 
+      type: 'disposable-supplies' },
+
+
+    { name: 'Arm Crutch', 
+      description: 'A support used by an injured or disabled person', 
+      src: '', 
+      category: 'devices', 
+      type: 'mobility-aid' },
+    { name: 'Cane', 
+      description: 'A hollow or pithy, usually slender, and often flexible jointed stem (as of a reed or bamboo)', 
+      src: '', 
+      category: 'devices', 
+      type: 'mobility-aid' },
+    { name: 'Commode Chair', 
+      description: 'Used by someone who needs help going to the toilet due to illness, injury or disability', 
+      src: '', 
+      category: 'devices', 
+      type: 'mobility-aid' },
   ]
 
   const CategoryFilter = products.filter(product => 
@@ -66,7 +175,6 @@ function Products() {
     const handler = setTimeout(() => {
       setSearch(value);
     }, 300);
-
     return () => clearTimeout(handler);
   }, [value]);
 
@@ -75,9 +183,7 @@ function Products() {
   }, [ID]);
 
   return (
-    <div className='bg-[rgb(246,250,251)] dark:bg-gradient-to-r dark:from-[#2B1D49] dark:via-black dark:to-[#193043] py-5! relative'
-      
-    >
+    <div className='bg-[rgb(246,250,251)] dark:bg-gradient-to-r dark:from-[#2B1D49] dark:via-black dark:to-[#193043] py-5! relative'>
       <div
         className='absolute top-0 left-0 content-[""] w-full h-full'
         style={{
@@ -91,15 +197,7 @@ function Products() {
       ></div>
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] mx-auto! flex flex-col gap-5 items-center min-h-[88dvh] px-5! md:px-0!">
         <div 
-          style={{
-            padding: '15px 60px 15px 50px',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            boxShadow: '0 25px 45px rgba(0, 0, 0, 0.1)',
-            border: '1px solid rgba(255, 255, 255, 0.5)',
-            borderRight: '1px solid rgba(255, 255, 255, 0.2)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-            backdropFilter: 'blur(5px)'
-          }}
+          style={ glassmorphism }
           className='flex items-center gap-2 rounded-full'
         >
           <span className='text-sm font-bold'>Search</span>
@@ -112,21 +210,11 @@ function Products() {
             onInput={e => e.target.value == '' ? setSearch('') : null}
           />
         </div>
-        <div 
-          className='flex justify-center items-center overflow-auto w-full gap-5 rounded-full'
-        >
+        <div className='flex justify-center items-center overflow-auto w-full gap-5'>
           {uniqueTypes.map((type, index) => (
             <button
               key={index}
-              style={{
-                padding: '8px 50px',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 15px 25px rgba(0, 0, 0, 0.1)',
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                borderRight: '1px solid rgba(255, 255, 255, 0.2)',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-                backdropFilter: 'blur(5px)'
-              }}
+              style={ glassmorphism }
               className='content-[""] rounded-full mb-5!'
               onClick={() => setSearch(type)}
             >
@@ -138,17 +226,8 @@ function Products() {
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product, index) => (
               <div 
-                style={{
-                  padding: '50px 35px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  boxShadow: '0 15px 25px rgba(0, 0, 0, 0.1)',
-                  border: '1px solid rgba(255, 255, 255, 0.5)',
-                  borderRadius: '5px',
-                  borderRight: '1px solid rgba(255, 255, 255, 0.2)',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-                  backdropFilter: 'blur(5px)'
-                }}
-                className='border border-gray-100 rounded-lg bg-[rgba(255,255,255,0.5)] flex flex-col gap-3 p-5! overflow-hidden' key={index}
+                style={ glassmorphism }
+                className='border border-gray-100 rounded-lg bg-[rgba(255,255,255,0.5)] flex flex-col gap-3 p-[35px]! overflow-hidden' key={index}
               >
                 {
                   product.src ? (
@@ -191,17 +270,8 @@ function Products() {
             ))
           ) : (
             <div 
-              style={{
-                padding: '50px 35px',
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 25px 45px rgba(0, 0, 0, 0.1)',
-                border: '1px solid rgba(255, 255, 255, 0.5)',
-                borderRadius: '5px',
-                borderRight: '1px solid rgba(255, 255, 255, 0.2)',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-                backdropFilter: 'blur(5px)'
-              }}
-              className='border border-gray-100 rounded-lg bg-[rgba(255,255,255,0.5)] flex flex-col gap-3 p-5!'
+              style={ glassmorphism }
+              className='border border-gray-100 rounded-lg bg-[rgba(255,255,255,0.5)] flex flex-col gap-3 p-[35px]!'
             >
               <div className='relative overflow-hidden flex items-center justify-center h-[200px] w-[200px] mx-auto! bg-white'>
                 <div className='absolute content-[""] w-[60px] h-[60px] rounded-full bg-red-500 flex items-center justify-center'>

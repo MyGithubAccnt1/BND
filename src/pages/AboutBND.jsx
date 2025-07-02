@@ -1,6 +1,35 @@
 import { useEffect, useRef, useState } from "react";
 import { getAssetPath } from "../utils/pathUtils";
 
+export function Introduction({ label, content, isOpen, onToggle }) {
+  return (
+    <>
+      <button
+        className={`font-bold text-start ${isOpen ? "text-[#6EC1E4]" : ""}`}
+        onClick={onToggle}
+      >
+        <span
+          className={`me-2! inline-block transition-all duration-300 ${
+            isOpen ? "rotate-180" : "rotate-90"
+          }`}
+        >
+          &#9650;
+        </span>
+        {label}
+      </button>
+      <p
+        className={`text-justify text-[#7A7A7A] px-6! transition-all duration-300 ${
+          isOpen ? "h-full opacity-100 my-4!" : "h-0 opacity-0"
+        }`}
+        style={{ fontFamily: "Karla" }}
+      >
+        {content}
+      </p>
+      <div className="h-0.5 bg-[rgba(0,0,0,0.4)] dark:bg-[rgba(255,255,255,0.4)] my-2!"></div>
+    </>
+  );
+}
+
 export function Dot() {
   return(
     <div className="absolute top-0 -left-12.5 content-[''] bg-white dark:bg-[#0D0D0D] w-6 h-6 rounded-full flex items-center justify-center">
@@ -61,6 +90,39 @@ export default function AboutBND() {
       [key]: !prev[key],
     }));
   };
+
+  const items = [
+    {
+      key: "integrity",
+      label: "INTEGRITY",
+      content:
+        "We act with sincerity, honesty, and fairness from which we build relationships, earn trust, and gain respect.",
+    },
+    {
+      key: "synergy",
+      label: "SYNERGY",
+      content:
+        "We work together as a team in achieving the common goal through shared passion and energy amidst the diversity.",
+    },
+    {
+      key: "commitment",
+      label: "COMMITMENT",
+      content:
+        "We work with utmost dedication and eagerness to deliver on our promises with the resolve of making a positive difference in our customers’ lives.",
+    },
+    {
+      key: "excellence",
+      label: "EXCELLENCE",
+      content:
+        "We consistently perform at our best by making the right choices and doing the right things in the pursuit of the highest quality of our work, products and services.",
+    },
+    {
+      key: "innovation",
+      label: "INNOVATION",
+      content:
+        "We constantly strive to redefine standards, challenge conventional views, and adapt to the society’s changing needs through the creation of timely and relevant products and solutions.",
+    },
+  ];
 
   const [PreviousSrc, setPreviousSrc] = useState('About1.jpg');
   const [PreviousClass, setPreviousClass] = useState('opacity-0 scale-[120%]');
@@ -185,130 +247,15 @@ export default function AboutBND() {
   return (
     <div className="flex flex-col gap-5 pt-5!">
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col px-5! md:px-0!">
-        <button
-          className={`font-bold text-start
-            ${ toggle.integrity ? "text-[#6EC1E4]" : "" }  
-          `}
-          onClick={() => handleToggle("integrity")}
-        >
-          <span
-            className={`me-2! inline-block transition-all duration-300 ${
-              toggle.integrity ? "rotate-180" : "rotate-90"
-            }`}
-          >
-            &#9650;
-          </span>
-          INTEGRITY
-        </button>
-        <p
-          className={`text-justify text-[#7A7A7A] px-6! transition-all duration-300 ${
-            toggle.integrity ? "h-full opacity-100 my-4!" : "h-0 opacity-0"
-          }`}
-          style={{ fontFamily: "Karla" }}
-        >
-          We act with sincerety, honesty, and fairness from which we build relationships, earn trust, and gain respect.
-        </p>
-        <div className="h-0.5 bg-[rgba(0,0,0,0.4)] dark:bg-[rgba(255,255,255,0.4)] my-2!"></div>
-
-        <button
-          className={`font-bold text-start
-            ${ toggle.synergy ? "text-[#6EC1E4]" : "" }  
-          `}
-          onClick={() => handleToggle("synergy")}
-        >
-          <span
-            className={`me-2! inline-block transition-all duration-300 ${
-              toggle.synergy ? "rotate-180" : "rotate-90"
-            }`}
-          >
-            &#9650;
-          </span>
-          SYNERGY
-        </button>
-        <p
-          className={`text-justify text-[#7A7A7A] px-6! transition-all duration-300 ${
-            toggle.synergy ? "h-full opacity-100 my-4!" : "h-0 opacity-0"
-          }`}
-          style={{ fontFamily: "Karla" }}
-        >
-          We work together as a team in achieving the common goal through shared passion and energy amidst the diversty.
-        </p>
-        <div className="h-0.5 bg-[rgba(0,0,0,0.4)] dark:bg-[rgba(255,255,255,0.4)] my-2!"></div>
-
-        <button
-          className={`font-bold text-start
-            ${ toggle.commitment ? "text-[#6EC1E4]" : "" }  
-          `}
-          onClick={() => handleToggle("commitment")}
-        >
-          <span
-            className={`me-2! inline-block transition-all duration-300 ${
-              toggle.commitment ? "rotate-180" : "rotate-90"
-            }`}
-          >
-            &#9650;
-          </span>
-          COMMITMENT
-        </button>
-        <p
-          className={`text-justify text-[#7A7A7A] px-6! transition-all duration-300 ${
-            toggle.commitment ? "h-full opacity-100 my-4!" : "h-0 opacity-0"
-          }`}
-          style={{ fontFamily: "Karla" }}
-        >
-          We work with utmost dedication and eagerness to deliver on our promises with the resolve of making a positive difference in our customers’ lives.
-        </p>
-        <div className="h-0.5 bg-[rgba(0,0,0,0.4)] dark:bg-[rgba(255,255,255,0.4)] my-2!"></div>
-
-        <button
-          className={`font-bold text-start
-            ${ toggle.excellence ? "text-[#6EC1E4]" : "" }  
-          `}
-          onClick={() => handleToggle("excellence")}
-        >
-          <span
-            className={`me-2! inline-block transition-all duration-300 ${
-              toggle.excellence ? "rotate-180" : "rotate-90"
-            }`}
-          >
-            &#9650;
-          </span>
-          EXCELLENCE
-        </button>
-        <p
-          className={`text-justify text-[#7A7A7A] px-6! transition-all duration-300 ${
-            toggle.excellence ? "h-full opacity-100 my-4!" : "h-0 opacity-0"
-          }`}
-          style={{ fontFamily: "Karla" }}
-        >
-          We consistently perform at our best by making the right choices and doing the right things in the pursuit of the highest quality of our work, products and services.
-        </p>
-        <div className="h-0.5 bg-[rgba(0,0,0,0.4)] dark:bg-[rgba(255,255,255,0.4)] my-2!"></div>
-
-        <button
-          className={`font-bold text-start
-            ${ toggle.innovation ? "text-[#6EC1E4]" : "" }  
-          `}
-          onClick={() => handleToggle("innovation")}
-        >
-          <span
-            className={`me-2! inline-block transition-all duration-300 ${
-              toggle.innovation ? "rotate-180" : "rotate-90"
-            }`}
-          >
-            &#9650;
-          </span>
-          INNOVATION
-        </button>
-        <p
-          className={`text-justify text-[#7A7A7A] px-6! transition-all duration-300 ${
-            toggle.innovation ? "h-full opacity-100 my-4!" : "h-0 opacity-0"
-          }`}
-          style={{ fontFamily: "Karla" }}
-        >
-          We constantly strive to redefine standards, challenge conventional views, and adapt to the society’s changing needs through the creation of timely and relevant products and solutions.
-        </p>
-        <div className="h-0.5 bg-[rgba(0,0,0,0.4)] dark:bg-[rgba(255,255,255,0.4)] my-2!"></div>
+        {items.map(({ key, label, content }) => (
+          <Introduction
+            key={key}
+            label={label}
+            content={content}
+            isOpen={toggle[key]}
+            onToggle={() => handleToggle(key)}
+          />
+        ))}
       </div>
 
       <div className="md:max-w-[80dvw] lg:max-w-[75dvw] md:mx-auto! w-full flex flex-col px-5! md:px-0!">
